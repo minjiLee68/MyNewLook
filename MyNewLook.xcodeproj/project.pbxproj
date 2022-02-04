@@ -13,6 +13,9 @@
 		0A1D06BD27AC0DB000F9CCC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A1D06BC27AC0DB000F9CCC9 /* Assets.xcassets */; };
 		0A1D06C027AC0DB000F9CCC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1D06BE27AC0DB000F9CCC9 /* LaunchScreen.storyboard */; };
 		0A1D06CA27AC396500F9CCC9 /* MyNewLookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D06C927AC396500F9CCC9 /* MyNewLookViewController.swift */; };
+		0A6B7FA527AD1BFD006B44F1 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B7FA427AD1BFD006B44F1 /* ContentViewController.swift */; };
+		0A959DB027AD134A005A58F4 /* DataPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */; };
+		BEDA1593DB5703E5B2B35631 /* Pods_MyNewLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23223DB747C6949B44E90FFF /* Pods_MyNewLook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,11 @@
 		0A1D06BF27AC0DB000F9CCC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A1D06C127AC0DB000F9CCC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A1D06C927AC396500F9CCC9 /* MyNewLookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNewLookViewController.swift; sourceTree = "<group>"; };
+		0A6B7FA427AD1BFD006B44F1 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewController.swift; path = ../ContentViewController.swift; sourceTree = "<group>"; };
+		0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPickerViewController.swift; sourceTree = "<group>"; };
+		23223DB747C6949B44E90FFF /* Pods_MyNewLook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyNewLook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7198B993A0580E158F0891B /* Pods-MyNewLook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNewLook.debug.xcconfig"; path = "Target Support Files/Pods-MyNewLook/Pods-MyNewLook.debug.xcconfig"; sourceTree = "<group>"; };
+		BB79AC2B6D19381D76E1FD38 /* Pods-MyNewLook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNewLook.release.xcconfig"; path = "Target Support Files/Pods-MyNewLook/Pods-MyNewLook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEDA1593DB5703E5B2B35631 /* Pods_MyNewLook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,9 @@
 			children = (
 				0A1D06B227AC0DAF00F9CCC9 /* MyNewLook */,
 				0A1D06B127AC0DAF00F9CCC9 /* Products */,
+				0A6B7FA427AD1BFD006B44F1 /* ContentViewController.swift */,
+				99F4345F1F669D24682F7A3B /* Pods */,
+				AF92C262A7D16F5C9BF7FB39 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,11 +72,29 @@
 				0A1D06B527AC0DAF00F9CCC9 /* SceneDelegate.swift */,
 				0A1D06B927AC0DAF00F9CCC9 /* Main.storyboard */,
 				0A1D06C927AC396500F9CCC9 /* MyNewLookViewController.swift */,
+				0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */,
 				0A1D06BC27AC0DB000F9CCC9 /* Assets.xcassets */,
 				0A1D06BE27AC0DB000F9CCC9 /* LaunchScreen.storyboard */,
 				0A1D06C127AC0DB000F9CCC9 /* Info.plist */,
 			);
 			path = MyNewLook;
+			sourceTree = "<group>";
+		};
+		99F4345F1F669D24682F7A3B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7198B993A0580E158F0891B /* Pods-MyNewLook.debug.xcconfig */,
+				BB79AC2B6D19381D76E1FD38 /* Pods-MyNewLook.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AF92C262A7D16F5C9BF7FB39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23223DB747C6949B44E90FFF /* Pods_MyNewLook.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A1D06C427AC0DB000F9CCC9 /* Build configuration list for PBXNativeTarget "MyNewLook" */;
 			buildPhases = (
+				B1DCF15C7CC565DF98E981B6 /* [CP] Check Pods Manifest.lock */,
 				0A1D06AC27AC0DAF00F9CCC9 /* Sources */,
 				0A1D06AD27AC0DAF00F9CCC9 /* Frameworks */,
 				0A1D06AE27AC0DAF00F9CCC9 /* Resources */,
+				A963B8CF08795FF799D8946A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,11 +165,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A963B8CF08795FF799D8946A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyNewLook/Pods-MyNewLook-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyNewLook/Pods-MyNewLook-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyNewLook/Pods-MyNewLook-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1DCF15C7CC565DF98E981B6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyNewLook-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0A1D06AC27AC0DAF00F9CCC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A6B7FA527AD1BFD006B44F1 /* ContentViewController.swift in Sources */,
+				0A959DB027AD134A005A58F4 /* DataPickerViewController.swift in Sources */,
 				0A1D06B427AC0DAF00F9CCC9 /* AppDelegate.swift in Sources */,
 				0A1D06CA27AC396500F9CCC9 /* MyNewLookViewController.swift in Sources */,
 				0A1D06B627AC0DAF00F9CCC9 /* SceneDelegate.swift in Sources */,
@@ -284,6 +360,7 @@
 		};
 		0A1D06C527AC0DB000F9CCC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7198B993A0580E158F0891B /* Pods-MyNewLook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +389,7 @@
 		};
 		0A1D06C627AC0DB000F9CCC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB79AC2B6D19381D76E1FD38 /* Pods-MyNewLook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
