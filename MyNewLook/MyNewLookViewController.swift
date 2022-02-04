@@ -31,6 +31,15 @@ class MyNewLookViewController: UIViewController {
         loveData()
         thankData()
         moderationData()
+        getNowTime()
+    }
+    
+    func getNowTime() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(identifier: TimeZone.current.identifier) as TimeZone?
+        dateFormatter.locale = Locale(identifier: Locale.current.identifier)
+        dateFormatter.dateFormat = "HH:mm"
+        print("\(dateFormatter.string(from: Date()))")
     }
     
     @IBAction func LoveAddButton(_ sender: UIButton) {
