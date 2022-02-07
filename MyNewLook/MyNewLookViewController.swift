@@ -31,15 +31,7 @@ class MyNewLookViewController: UIViewController {
         loveData()
         thankData()
         moderationData()
-        getNowTime()
-    }
-    
-    func getNowTime() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(identifier: TimeZone.current.identifier) as TimeZone?
-        dateFormatter.locale = Locale(identifier: Locale.current.identifier)
-        dateFormatter.dateFormat = "HH:mm"
-        print("\(dateFormatter.string(from: Date()))")
+        dateInit()
     }
     
     @IBAction func LoveAddButton(_ sender: UIButton) {
@@ -84,17 +76,36 @@ class MyNewLookViewController: UIViewController {
         moderationCount.text = String(moderation)
         progressCount3(data3: moderation)
     }
+    
+    func dateInit() {
+        let tomorrow = Date(timeIntervalSinceNow: 60 * 60 * 24)
+        let date = Date()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let dateString = dateFormatter.string(from: date)
+        let tomorrowString = dateFormatter.string(from: tomorrow)
+
+        if dateString == tomorrowString {
+            UserDefaults.standard.removeObject(forKey: "count1")
+            UserDefaults.standard.removeObject(forKey: "count2")
+            UserDefaults.standard.removeObject(forKey: "count3")
+        }
+    }
 }
 
 extension MyNewLookViewController {
     func data1(count: Int) {
         UserDefaults.standard.set(count, forKey: "count1")
+        UserDefaults.standard.set(count, forKey: "subCount1")
     }
     func data2(count: Int) {
         UserDefaults.standard.set(count, forKey: "count2")
+        UserDefaults.standard.set(count, forKey: "subCount2")
     }
     func data3(count: Int) {
         UserDefaults.standard.set(count, forKey: "count3")
+        UserDefaults.standard.set(count, forKey: "subCount3")
     }
 }
 

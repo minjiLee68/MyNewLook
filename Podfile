@@ -8,6 +8,8 @@ target 'MyNewLook' do
   # Pods for MyNewLook
 	
 	pod 'FloatingPanel'
+	pod 'FSCalendar'
 
 end
+
 

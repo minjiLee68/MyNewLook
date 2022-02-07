@@ -13,8 +13,9 @@
 		0A1D06BD27AC0DB000F9CCC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A1D06BC27AC0DB000F9CCC9 /* Assets.xcassets */; };
 		0A1D06C027AC0DB000F9CCC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1D06BE27AC0DB000F9CCC9 /* LaunchScreen.storyboard */; };
 		0A1D06CA27AC396500F9CCC9 /* MyNewLookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D06C927AC396500F9CCC9 /* MyNewLookViewController.swift */; };
-		0A6B7FA527AD1BFD006B44F1 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6B7FA427AD1BFD006B44F1 /* ContentViewController.swift */; };
 		0A959DB027AD134A005A58F4 /* DataPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */; };
+		0AFFF3B427B15A9D00F57939 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF3B327B15A9D00F57939 /* ContentViewController.swift */; };
+		0AFFF3B627B15BDF00F57939 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF3B527B15BDF00F57939 /* Storage.swift */; };
 		BEDA1593DB5703E5B2B35631 /* Pods_MyNewLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23223DB747C6949B44E90FFF /* Pods_MyNewLook.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +28,9 @@
 		0A1D06BF27AC0DB000F9CCC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A1D06C127AC0DB000F9CCC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A1D06C927AC396500F9CCC9 /* MyNewLookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNewLookViewController.swift; sourceTree = "<group>"; };
-		0A6B7FA427AD1BFD006B44F1 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewController.swift; path = ../ContentViewController.swift; sourceTree = "<group>"; };
 		0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPickerViewController.swift; sourceTree = "<group>"; };
+		0AFFF3B327B15A9D00F57939 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		0AFFF3B527B15BDF00F57939 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		23223DB747C6949B44E90FFF /* Pods_MyNewLook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyNewLook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7198B993A0580E158F0891B /* Pods-MyNewLook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNewLook.debug.xcconfig"; path = "Target Support Files/Pods-MyNewLook/Pods-MyNewLook.debug.xcconfig"; sourceTree = "<group>"; };
 		BB79AC2B6D19381D76E1FD38 /* Pods-MyNewLook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNewLook.release.xcconfig"; path = "Target Support Files/Pods-MyNewLook/Pods-MyNewLook.release.xcconfig"; sourceTree = "<group>"; };
@@ -51,7 +53,6 @@
 			children = (
 				0A1D06B227AC0DAF00F9CCC9 /* MyNewLook */,
 				0A1D06B127AC0DAF00F9CCC9 /* Products */,
-				0A6B7FA427AD1BFD006B44F1 /* ContentViewController.swift */,
 				99F4345F1F669D24682F7A3B /* Pods */,
 				AF92C262A7D16F5C9BF7FB39 /* Frameworks */,
 			);
@@ -72,9 +73,11 @@
 				0A1D06B527AC0DAF00F9CCC9 /* SceneDelegate.swift */,
 				0A1D06B927AC0DAF00F9CCC9 /* Main.storyboard */,
 				0A1D06C927AC396500F9CCC9 /* MyNewLookViewController.swift */,
+				0AFFF3B527B15BDF00F57939 /* Storage.swift */,
 				0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */,
 				0A1D06BC27AC0DB000F9CCC9 /* Assets.xcassets */,
 				0A1D06BE27AC0DB000F9CCC9 /* LaunchScreen.storyboard */,
+				0AFFF3B327B15A9D00F57939 /* ContentViewController.swift */,
 				0A1D06C127AC0DB000F9CCC9 /* Info.plist */,
 			);
 			path = MyNewLook;
@@ -212,11 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A6B7FA527AD1BFD006B44F1 /* ContentViewController.swift in Sources */,
+				0AFFF3B427B15A9D00F57939 /* ContentViewController.swift in Sources */,
 				0A959DB027AD134A005A58F4 /* DataPickerViewController.swift in Sources */,
 				0A1D06B427AC0DAF00F9CCC9 /* AppDelegate.swift in Sources */,
 				0A1D06CA27AC396500F9CCC9 /* MyNewLookViewController.swift in Sources */,
 				0A1D06B627AC0DAF00F9CCC9 /* SceneDelegate.swift in Sources */,
+				0AFFF3B627B15BDF00F57939 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

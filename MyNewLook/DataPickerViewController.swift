@@ -7,25 +7,54 @@
 
 import UIKit
 import FloatingPanel
+import FSCalendar
 
 class DataPickerViewController: UIViewController, FloatingPanelControllerDelegate {
-    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var calendarOrigin: FSCalendar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let fcp = FloatingPanelController()
-        fcp.delegate = self
         
-        guard let contentViewcontroller = storyboard?.instantiateViewController(withIdentifier: "content") as? ContentViewController else { return }
-        fcp.set(contentViewController: contentViewcontroller)
-        fcp.addPanel(toParent: self)
-        datePicker.locale = Locale(identifier: "ko-KR")
-        datePicker.timeZone = .autoupdatingCurrent
-        datePicker.addTarget(self, action: #selector(handleDatePicler(_:)), for: .valueChanged)
+//        bottomSheet()
+        calendarStyle()
     }
-    @objc
-    private func handleDatePicler(_ sender: UIDatePicker) {
-        print(sender.date)
+    
+//    func bottomSheet() {
+//        let fcp = FloatingPanelController()
+//        let appearance = SurfaceAppearance()
+//        appearance.cornerRadius = 30.0
+//        appearance.backgroundColor = .clear
+//        fcp.delegate = self
+//        guard let contentViewcontroller = storyboard?.instantiateViewController(withIdentifier: "content") as? ContentViewController else { return }
+//        fcp.set(contentViewController: contentViewcontroller)
+//        fcp.addPanel(toParent: self)
+//        fcp.surfaceView.appearance = appearance
+//    }
+}
+
+extension DataPickerViewController {
+    func calendarStyle() {
+        calendarOrigin.locale = Locale(identifier: "ko_KR")
+        
+        calendarOrigin.headerHeight = 66
+        calendarOrigin.weekdayHeight = 51
+        calendarOrigin.appearance.headerMinimumDissolvedAlpha = 0.3
+        calendarOrigin.appearance.headerTitleColor = .black
+        calendarOrigin.appearance.headerDateFormat = "YYYY년 M월"
+        calendarOrigin.appearance.headerTitleFont = UIFont.systemFont(ofSize: 24)
+        
+        calendarOrigin.backgroundColor = .white
+        calendarOrigin.appearance.weekdayTextColor = .black
+        calendarOrigin.appearance.selectionColor = .gray
+        calendarOrigin.appearance.titleWeekendColor = .black
+        calendarOrigin.appearance.titleDefaultColor = .black
+        
+        calendarOrigin.appearance.titleTodayColor = .systemBlue
+        calendarOrigin.appearance.todayColor = .clear
+        calendarOrigin.appearance.todaySelectionColor = .clear
+        
+        calendarOrigin.appearance.headerTitleFont = UIFont(name: "NotoSansCJKKR-Medium", size: 16)
+        
+        calendarOrigin.appearance.titleFont = UIFont(name: "Roboto-Regular", size: 14)
     }
 }
