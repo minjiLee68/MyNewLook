@@ -34,13 +34,16 @@ class DataPickerViewController: UIViewController, FloatingPanelControllerDelegat
 
 extension DataPickerViewController {
     func calendarStyle() {
-        calendarOrigin.locale = Locale(identifier: "ko_KR")
+        calendarOrigin.locale = Locale(identifier: "en-US")
         
         calendarOrigin.headerHeight = 66
-        calendarOrigin.weekdayHeight = 51
+        calendarOrigin.weekdayHeight = 55
         calendarOrigin.appearance.headerMinimumDissolvedAlpha = 0.3
         calendarOrigin.appearance.headerTitleColor = .black
-        calendarOrigin.appearance.headerDateFormat = "YYYY년 M월"
+        calendarOrigin.appearance.headerDateFormat = "YYYY.MM"
+        calendarOrigin.appearance.caseOptions = .weekdayUsesSingleUpperCase
+        calendarOrigin.appearance.borderRadius = 0
+        calendarOrigin.placeholderType = .none
         calendarOrigin.appearance.headerTitleFont = UIFont.systemFont(ofSize: 24)
         
         calendarOrigin.backgroundColor = .white
@@ -53,8 +56,7 @@ extension DataPickerViewController {
         calendarOrigin.appearance.todayColor = .clear
         calendarOrigin.appearance.todaySelectionColor = .clear
         
-        calendarOrigin.appearance.headerTitleFont = UIFont(name: "NotoSansCJKKR-Medium", size: 16)
-        
-        calendarOrigin.appearance.titleFont = UIFont(name: "Roboto-Regular", size: 14)
+//        calendarOrigin.appearance.headerTitleFont = UIFont.systemFont(ofSize: UIFont.labelFontSize)
+//        calendarOrigin.appearance.titleFont = UIFont(name: "Roboto-Regular", size: 14)
     }
 }
