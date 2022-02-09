@@ -27,7 +27,9 @@ class MyNewLookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+        overrideUserInterfaceStyle = .light
+        
         loveData()
         thankData()
         moderationData()
