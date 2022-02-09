@@ -29,6 +29,7 @@ class DataPickerViewController: UIViewController, FSCalendarDelegate, FSCalendar
         
         calendarStyle()
         viewDesign()
+        calendarStyle()
     }
 }
 
@@ -44,31 +45,30 @@ extension DataPickerViewController {
         calendarOrigin.appearance.caseOptions = .weekdayUsesSingleUpperCase
         calendarOrigin.appearance.borderRadius = 0
         calendarOrigin.placeholderType = .none
-        calendarOrigin.appearance.headerTitleFont = UIFont.systemFont(ofSize: 24)
         
         calendarOrigin.backgroundColor = .primary
-        calendarOrigin.appearance.weekdayTextColor = .weekday
-        calendarOrigin.appearance.selectionColor = .weekday
+        calendarOrigin.appearance.weekdayTextColor = .secondary
+        calendarOrigin.appearance.selectionColor = .secondary
         calendarOrigin.appearance.titleWeekendColor = .secondary
         calendarOrigin.appearance.titleDefaultColor = .secondary
         
-        calendarOrigin.appearance.titleTodayColor = .primary
+        calendarOrigin.appearance.titleTodayColor = .secondary
         calendarOrigin.appearance.todayColor = .none
-        calendarOrigin.appearance.weekdayFont = UIFont(name: "Apple Color Emoji", size: 20.0)
     }
     
     func viewDesign() {
         viewUI.layer.cornerRadius = 15
         viewUI.clipsToBounds = true
-        viewUI.layer.shadowRadius = 15
-        viewUI.layer.shadowOpacity = 0.2
-        viewUI.layer.shadowColor = UIColor.black.cgColor
-        viewUI.layer.shadowOffset = CGSize(width: 10, height: 10)
+    }
+    
+    func calendarFont() {
+        calendarOrigin.appearance.headerTitleFont = UIFont(name: "System Bold", size: 28.0)
+        calendarOrigin.appearance.weekdayFont = UIFont(name: "Apple Color Emoji", size: 18.0)
+        calendarOrigin.appearance.subtitleFont = UIFont(name: "Apple Color Emoji", size: 14.0)
     }
 }
 
 extension UIColor {
     class var primary: UIColor? { return UIColor(named: "primary") }
     class var secondary: UIColor? { return UIColor(named: "secondary") }
-    class var weekday: UIColor? { return UIColor(named: "weekday") }
 }
