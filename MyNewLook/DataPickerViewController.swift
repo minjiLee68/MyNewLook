@@ -39,16 +39,15 @@ extension DataPickerViewController {
         
         calendarOrigin.headerHeight = 66
         calendarOrigin.weekdayHeight = 55
-        calendarOrigin.appearance.headerMinimumDissolvedAlpha = 0.2
+        calendarOrigin.appearance.headerMinimumDissolvedAlpha = 0.15
         calendarOrigin.appearance.headerTitleColor = .secondary
         calendarOrigin.appearance.headerDateFormat = "YYYY.MM"
         calendarOrigin.appearance.caseOptions = .weekdayUsesSingleUpperCase
         calendarOrigin.appearance.borderRadius = 0
         calendarOrigin.placeholderType = .none
         
-        calendarOrigin.backgroundColor = .primary
         calendarOrigin.appearance.weekdayTextColor = .secondary
-        calendarOrigin.appearance.selectionColor = .secondary
+        calendarOrigin.appearance.selectionColor = .containColor
         calendarOrigin.appearance.titleWeekendColor = .secondary
         calendarOrigin.appearance.titleDefaultColor = .secondary
         
@@ -71,4 +70,5 @@ extension DataPickerViewController {
 extension UIColor {
     class var primary: UIColor? { return UIColor(named: "primary") }
     class var secondary: UIColor? { return UIColor(named: "secondary") }
+    class var containColor: UIColor? { return UIColor(named: "containerColor") }
 }
