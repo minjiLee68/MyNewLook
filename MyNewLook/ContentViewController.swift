@@ -30,12 +30,15 @@ class ContentViewController: UIViewController {
         loveData()
         thankData()
         moderationData()
+        
+        UserDefaults.standard.removeObject(forKey: "count1")
     }
     
     @IBAction func loveButton(_ sender: UIButton) {
         let love = UserDefaults.standard.integer(forKey: "count1")
         count1 = love + 1
         data1(count: count1)
+        print("\(count1)")
         loveCount.text = String(count1)
         progressCount1(data1: count1)
     }
@@ -92,113 +95,29 @@ extension ContentViewController {
 
 extension ContentViewController {
     func progressCount1(data1: Int) {
-        switch(data1) {
-        case 0:
-            loveProgressbar.progress = 0
-        case 1:
-            loveProgressbar.progress = 0.1
-            loveProgressbar.setProgress(0.1, animated: true)
-        case 2:
-            loveProgressbar.progress = 0.2
-            loveProgressbar.setProgress(0.2, animated: true)
-        case 3:
-            loveProgressbar.progress = 0.3
-            loveProgressbar.setProgress(0.3, animated: true)
-        case 4:
-            loveProgressbar.progress = 0.4
-            loveProgressbar.setProgress(0.4, animated: true)
-        case 5:
-            loveProgressbar.progress = 0.5
-            loveProgressbar.setProgress(0.5, animated: true)
-        case 6:
-            loveProgressbar.progress = 0.6
-            loveProgressbar.setProgress(0.6, animated: true)
-        case 7:
-            loveProgressbar.progress = 0.7
-            loveProgressbar.setProgress(0.7, animated: true)
-        case 8:
-            loveProgressbar.progress = 0.8
-            loveProgressbar.setProgress(0.8, animated: true)
-        case 9:
-            loveProgressbar.progress = 0.9
-            loveProgressbar.setProgress(0.9, animated: true)
-        default:
+        let progressCount = Float(data1) / 10
+        
+        loveProgressbar.progress = progressCount
+        if progressCount > 1 {
             loveProgressbar.progress = 1
-            loveProgressbar.setProgress(1, animated: true)
         }
     }
     
     func progressCount2(data2: Int) {
-        switch(data2) {
-        case 0:
-            thankProgressbar.progress = 0
-        case 1:
-            thankProgressbar.progress = 0.1
-            thankProgressbar.setProgress(0.1, animated: true)
-        case 2:
-            thankProgressbar.progress = 0.2
-            thankProgressbar.setProgress(0.2, animated: true)
-        case 3:
-            thankProgressbar.progress = 0.3
-            thankProgressbar.setProgress(0.3, animated: true)
-        case 4:
-            thankProgressbar.progress = 0.4
-            thankProgressbar.setProgress(0.4, animated: true)
-        case 5:
-            thankProgressbar.progress = 0.5
-            thankProgressbar.setProgress(0.5, animated: true)
-        case 6:
-            thankProgressbar.progress = 0.6
-            thankProgressbar.setProgress(0.6, animated: true)
-        case 7:
-            thankProgressbar.progress = 0.7
-            thankProgressbar.setProgress(0.7, animated: true)
-        case 8:
-            thankProgressbar.progress = 0.8
-            thankProgressbar.setProgress(0.8, animated: true)
-        case 9:
-            thankProgressbar.progress = 0.9
-            thankProgressbar.setProgress(0.9, animated: true)
-        default:
+        let progressCount = Float(data2) / 10
+        
+        thankProgressbar.progress = progressCount
+        if progressCount > 1 {
             thankProgressbar.progress = 1
-            thankProgressbar.setProgress(1, animated: true)
         }
     }
     
     func progressCount3(data3: Int) {
-        switch(data3) {
-        case 0:
-            moderationProgressbar.progress = 0
-        case 1:
-            moderationProgressbar.progress = 0.1
-            moderationProgressbar.setProgress(0.1, animated: true)
-        case 2:
-            moderationProgressbar.progress = 0.2
-            moderationProgressbar.setProgress(0.2, animated: true)
-        case 3:
-            moderationProgressbar.progress = 0.3
-            moderationProgressbar.setProgress(0.3, animated: true)
-        case 4:
-            moderationProgressbar.progress = 0.4
-            moderationProgressbar.setProgress(0.4, animated: true)
-        case 5:
-            moderationProgressbar.progress = 0.5
-            moderationProgressbar.setProgress(0.5, animated: true)
-        case 6:
-            moderationProgressbar.progress = 0.6
-            moderationProgressbar.setProgress(0.6, animated: true)
-        case 7:
-            moderationProgressbar.progress = 0.7
-            moderationProgressbar.setProgress(0.7, animated: true)
-        case 8:
-            moderationProgressbar.progress = 0.8
-            moderationProgressbar.setProgress(0.8, animated: true)
-        case 9:
-            moderationProgressbar.progress = 0.9
-            moderationProgressbar.setProgress(0.9, animated: true)
-        default:
+        let progressCount = Float(data3) / 10
+        
+        moderationProgressbar.progress = progressCount
+        if progressCount > 1 {
             moderationProgressbar.progress = 1
-            moderationProgressbar.setProgress(1, animated: true)
         }
     }
 }
