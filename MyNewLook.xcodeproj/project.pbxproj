@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1761BA27B3E562008BC98A /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1761B927B3E561008BC98A /* Results.swift */; };
 		0A1D06B427AC0DAF00F9CCC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D06B327AC0DAF00F9CCC9 /* AppDelegate.swift */; };
 		0A1D06B627AC0DAF00F9CCC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D06B527AC0DAF00F9CCC9 /* SceneDelegate.swift */; };
 		0A1D06BB27AC0DAF00F9CCC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1D06B927AC0DAF00F9CCC9 /* Main.storyboard */; };
@@ -14,11 +15,11 @@
 		0A1D06C027AC0DB000F9CCC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1D06BE27AC0DB000F9CCC9 /* LaunchScreen.storyboard */; };
 		0A959DB027AD134A005A58F4 /* DataPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */; };
 		0AFFF3B427B15A9D00F57939 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF3B327B15A9D00F57939 /* ContentViewController.swift */; };
-		0AFFF3B627B15BDF00F57939 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF3B527B15BDF00F57939 /* Storage.swift */; };
 		BEDA1593DB5703E5B2B35631 /* Pods_MyNewLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23223DB747C6949B44E90FFF /* Pods_MyNewLook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A1761B927B3E561008BC98A /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		0A1D06B027AC0DAF00F9CCC9 /* MyNewLook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNewLook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A1D06B327AC0DAF00F9CCC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A1D06B527AC0DAF00F9CCC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,7 +29,6 @@
 		0A1D06C127AC0DB000F9CCC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPickerViewController.swift; sourceTree = "<group>"; };
 		0AFFF3B327B15A9D00F57939 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
-		0AFFF3B527B15BDF00F57939 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		23223DB747C6949B44E90FFF /* Pods_MyNewLook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyNewLook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7198B993A0580E158F0891B /* Pods-MyNewLook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNewLook.debug.xcconfig"; path = "Target Support Files/Pods-MyNewLook/Pods-MyNewLook.debug.xcconfig"; sourceTree = "<group>"; };
 		BB79AC2B6D19381D76E1FD38 /* Pods-MyNewLook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNewLook.release.xcconfig"; path = "Target Support Files/Pods-MyNewLook/Pods-MyNewLook.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 				0A1D06B327AC0DAF00F9CCC9 /* AppDelegate.swift */,
 				0A1D06B527AC0DAF00F9CCC9 /* SceneDelegate.swift */,
 				0A1D06B927AC0DAF00F9CCC9 /* Main.storyboard */,
-				0AFFF3B527B15BDF00F57939 /* Storage.swift */,
+				0A1761B927B3E561008BC98A /* Results.swift */,
 				0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */,
 				0A1D06BC27AC0DB000F9CCC9 /* Assets.xcassets */,
 				0A1D06BE27AC0DB000F9CCC9 /* LaunchScreen.storyboard */,
@@ -216,7 +216,7 @@
 				0A959DB027AD134A005A58F4 /* DataPickerViewController.swift in Sources */,
 				0A1D06B427AC0DAF00F9CCC9 /* AppDelegate.swift in Sources */,
 				0A1D06B627AC0DAF00F9CCC9 /* SceneDelegate.swift in Sources */,
-				0AFFF3B627B15BDF00F57939 /* Storage.swift in Sources */,
+				0A1761BA27B3E562008BC98A /* Results.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

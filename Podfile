@@ -6,6 +6,7 @@ target 'MyNewLook' do
   use_frameworks!
 
   pod 'FSCalendar'
+  pod 'RealmSwift','10.15.1'
 
   # Pods for MyNewLook
 
