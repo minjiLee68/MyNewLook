@@ -12,7 +12,11 @@ class DataPickerViewController: UIViewController, FSCalendarDelegate, FSCalendar
     @IBOutlet weak var calendarOrigin: FSCalendar!
     @IBOutlet weak var containView: UIView!
     @IBOutlet weak var viewUI: UIView!
+    @IBOutlet weak var changeItem: UIButton!
     
+    var contents1: String = ""
+    var contents2: String = ""
+    var contents3: String = ""
         
     var contentViewController: ContentViewController!
 
@@ -30,6 +34,14 @@ class DataPickerViewController: UIViewController, FSCalendarDelegate, FSCalendar
         calendarStyle()
         viewDesign()
         calendarStyle()
+        
+        changeItem.addTarget(self, action:  #selector(goAlert), for: .touchUpInside)
+    }
+    
+    @objc func goAlert() {
+        let alert = self.storyboard?.instantiateViewController(withIdentifier: "changeItem") as! ChangeItemViewController
+        alert.modalPresentationStyle = .overCurrentContext
+        present(alert, animated: false, completion: nil)
     }
 }
 

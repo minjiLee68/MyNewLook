@@ -8,8 +8,6 @@
 import UIKit
 
 class ContentViewController: UIViewController {
-    @IBOutlet weak var progressbar: UIProgressView!
-    
     @IBOutlet weak var check1: UIButton!
     @IBOutlet weak var check2: UIButton!
     @IBOutlet weak var check3: UIButton!

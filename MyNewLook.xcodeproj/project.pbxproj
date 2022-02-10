@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A02399527B55E6E00C36E69 /* ChangeItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02399427B55E6E00C36E69 /* ChangeItemViewController.swift */; };
 		0A1761BA27B3E562008BC98A /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1761B927B3E561008BC98A /* Results.swift */; };
 		0A1D06B427AC0DAF00F9CCC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D06B327AC0DAF00F9CCC9 /* AppDelegate.swift */; };
 		0A1D06B627AC0DAF00F9CCC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D06B527AC0DAF00F9CCC9 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A02399427B55E6E00C36E69 /* ChangeItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeItemViewController.swift; sourceTree = "<group>"; };
 		0A1761B927B3E561008BC98A /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
 		0A1D06B027AC0DAF00F9CCC9 /* MyNewLook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNewLook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A1D06B327AC0DAF00F9CCC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				0A1D06B327AC0DAF00F9CCC9 /* AppDelegate.swift */,
 				0A1D06B527AC0DAF00F9CCC9 /* SceneDelegate.swift */,
 				0A1D06B927AC0DAF00F9CCC9 /* Main.storyboard */,
+				0A02399427B55E6E00C36E69 /* ChangeItemViewController.swift */,
 				0A1761B927B3E561008BC98A /* Results.swift */,
 				0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */,
 				0A1D06BC27AC0DB000F9CCC9 /* Assets.xcassets */,
@@ -217,6 +220,7 @@
 				0A1D06B427AC0DAF00F9CCC9 /* AppDelegate.swift in Sources */,
 				0A1D06B627AC0DAF00F9CCC9 /* SceneDelegate.swift in Sources */,
 				0A1761BA27B3E562008BC98A /* Results.swift in Sources */,
+				0A02399527B55E6E00C36E69 /* ChangeItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
