@@ -7,16 +7,15 @@
 
 import UIKit
 import FSCalendar
+import RealmSwift
 
-class DataPickerViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource {
+class DataPickerViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     @IBOutlet weak var calendarOrigin: FSCalendar!
     @IBOutlet weak var containView: UIView!
     @IBOutlet weak var viewUI: UIView!
     @IBOutlet weak var changeItem: UIButton!
     
-    var contents1: String = ""
-    var contents2: String = ""
-    var contents3: String = ""
+    let realm = try! Realm()
         
     var contentViewController: ContentViewController!
 
@@ -46,6 +45,18 @@ class DataPickerViewController: UIViewController, FSCalendarDelegate, FSCalendar
 }
 
 extension DataPickerViewController {
+    func realmData() {
+        let date = Date()
+        let text1 = UserDefaults.standard.string(forKey: "contents1")
+        let data1 = Results(name: text1 ?? "title", count: "0", date: date)
+        try! realm.write {
+            realm.add(data1)
+        }
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+    }
+}
+
+extension DataPickerViewController {
     func calendarStyle() {
         calendarOrigin.locale = Locale(identifier: "en-US")
         
@@ -65,17 +76,12 @@ extension DataPickerViewController {
         
         calendarOrigin.appearance.titleTodayColor = .secondary
         calendarOrigin.appearance.todayColor = .none
+        calendarOrigin.appearance.weekdayFont = UIFont(name: "Apple Color Emoji", size: 18.0)
     }
     
     func viewDesign() {
         viewUI.layer.cornerRadius = 15
         viewUI.clipsToBounds = true
-    }
-    
-    func calendarFont() {
-        calendarOrigin.appearance.headerTitleFont = UIFont(name: "System Bold", size: 28.0)
-        calendarOrigin.appearance.weekdayFont = UIFont(name: "Apple Color Emoji", size: 18.0)
-        calendarOrigin.appearance.subtitleFont = UIFont(name: "Apple Color Emoji", size: 14.0)
     }
 }
 

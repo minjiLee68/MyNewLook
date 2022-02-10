@@ -7,6 +7,7 @@
 
 import UIKit
 import Foundation
+import RealmSwift
 
 class ChangeItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var contents1: UITextField!
@@ -48,12 +49,9 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
 
 extension ChangeItemViewController {
     @IBAction func enter(_ sender: UIButton) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "DateViewController") as? DataPickerViewController else { return }
-        vc.contents1 = contents1.text!
-        vc.contents2 = contents2.text!
-        vc.contents3 = contents3.text!
-        
-        self.navigationController?.pushViewController(vc, animated: false)
+        UserDefaults.standard.set(contents1.text, forKey: "contents1")
+        UserDefaults.standard.set(contents2.text, forKey: "contents2")
+        UserDefaults.standard.set(contents3.text, forKey: "contents3")
     }
 }
 
