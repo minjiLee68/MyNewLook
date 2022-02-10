@@ -21,6 +21,7 @@ class ContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
     }
     
     @IBAction func checkBtn1(_ sender: UIButton) {

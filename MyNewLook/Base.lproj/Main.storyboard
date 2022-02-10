@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fou-97-kiE">
-                                <rect key="frame" x="15" y="534" width="384" height="298"/>
+                                <rect key="frame" x="15" y="544" width="384" height="298"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9xk-yX-9bW">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="298"/>
@@ -35,17 +35,17 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFN-a4-VHk" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="44" width="414" height="480"/>
+                                <rect key="frame" x="0.0" y="74" width="414" height="470"/>
                                 <color key="backgroundColor" name="primary"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="480" id="QXJ-EJ-FJZ"/>
+                                    <constraint firstAttribute="height" constant="470" id="QXJ-EJ-FJZ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="headerTitleTextSize">
-                                        <real key="value" value="24"/>
+                                        <real key="value" value="28"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="weekdayTextSize">
                                         <real key="value" value="18"/>
@@ -59,17 +59,27 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="useVeryShortWeekdaySymbols" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNh-iz-sMZ">
+                                <rect key="frame" x="371" y="52" width="28" height="27"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="pencil.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                                </state>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dg0-5o-OhR"/>
                         <color key="backgroundColor" name="primary"/>
                         <constraints>
-                            <constraint firstItem="Fou-97-kiE" firstAttribute="top" secondItem="TFN-a4-VHk" secondAttribute="bottom" constant="10" id="5z8-Rn-2N0"/>
-                            <constraint firstItem="TFN-a4-VHk" firstAttribute="top" secondItem="dg0-5o-OhR" secondAttribute="top" id="87j-JF-8nR"/>
+                            <constraint firstItem="Fou-97-kiE" firstAttribute="top" secondItem="TFN-a4-VHk" secondAttribute="bottom" id="5z8-Rn-2N0"/>
+                            <constraint firstItem="TFN-a4-VHk" firstAttribute="top" secondItem="dg0-5o-OhR" secondAttribute="top" constant="30" id="87j-JF-8nR"/>
+                            <constraint firstItem="TFN-a4-VHk" firstAttribute="top" secondItem="zNh-iz-sMZ" secondAttribute="bottom" constant="-5" id="Mba-ic-NfM"/>
                             <constraint firstItem="TFN-a4-VHk" firstAttribute="leading" secondItem="dg0-5o-OhR" secondAttribute="leading" id="bTg-AB-wxz"/>
+                            <constraint firstAttribute="trailing" secondItem="zNh-iz-sMZ" secondAttribute="trailing" constant="15" id="ed3-kb-7g0"/>
                             <constraint firstItem="dg0-5o-OhR" firstAttribute="trailing" secondItem="Fou-97-kiE" secondAttribute="trailing" constant="15" id="nEU-Z5-YTt"/>
                             <constraint firstItem="dg0-5o-OhR" firstAttribute="trailing" secondItem="TFN-a4-VHk" secondAttribute="trailing" id="qiA-Ln-Iec"/>
                             <constraint firstItem="Fou-97-kiE" firstAttribute="leading" secondItem="dg0-5o-OhR" secondAttribute="leading" constant="15" id="vRh-GJ-AJb"/>
-                            <constraint firstItem="dg0-5o-OhR" firstAttribute="bottom" secondItem="Fou-97-kiE" secondAttribute="bottom" constant="30" id="wmH-5I-zBH"/>
+                            <constraint firstItem="dg0-5o-OhR" firstAttribute="bottom" secondItem="Fou-97-kiE" secondAttribute="bottom" constant="20" id="wmH-5I-zBH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="accumulate" image="tray.fill" catalog="system" id="18u-o0-qY5"/>
@@ -92,25 +102,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LMS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBx-iI-6wl">
-                                <rect key="frame" x="40" y="20" width="41" height="27"/>
+                                <rect key="frame" x="40" y="23" width="41" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="22"/>
                                 <color key="textColor" name="secondary"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pray" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUr-eE-FLO">
-                                <rect key="frame" x="40" y="103" width="40" height="27"/>
+                                <rect key="frame" x="40" y="106" width="40" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="22"/>
                                 <color key="textColor" name="secondary"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Study" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKa-n8-Ad9">
-                                <rect key="frame" x="33.5" y="186" width="53" height="27"/>
+                                <rect key="frame" x="33.5" y="189" width="53" height="27"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="22"/>
                                 <color key="textColor" name="secondary"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZg-vT-eJH">
-                                <rect key="frame" x="320" y="21" width="25" height="25"/>
+                                <rect key="frame" x="320" y="24" width="25" height="25"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="checkmark.circle" catalog="system">
@@ -122,7 +132,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbq-Wm-Vhv">
-                                <rect key="frame" x="320" y="187" width="25" height="25"/>
+                                <rect key="frame" x="320" y="190" width="25" height="25"/>
                                 <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="checkmark.circle" catalog="system">
@@ -133,29 +143,29 @@
                                     <action selector="checkBtn3:" destination="tnf-SE-McA" eventType="touchUpInside" id="yDa-xd-nec"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baH-Uj-XAc">
-                                <rect key="frame" x="91" y="33" width="219" height="1"/>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baH-Uj-XAc">
+                                <rect key="frame" x="91" y="36" width="219" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="fRb-yq-18q"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CC8-m1-f0M">
-                                <rect key="frame" x="90" y="116" width="220" height="1"/>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CC8-m1-f0M">
+                                <rect key="frame" x="90" y="119" width="220" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="HiB-Rf-d5f"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvb-qF-Gxu">
-                                <rect key="frame" x="96.5" y="199" width="215.5" height="1"/>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mvb-qF-Gxu">
+                                <rect key="frame" x="96.5" y="202" width="215.5" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="eWX-7j-OfZ"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ThQ-O9-ceU">
-                                <rect key="frame" x="320" y="104" width="25" height="25"/>
+                                <rect key="frame" x="320" y="107" width="25" height="25"/>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="checkmark.circle" catalog="system">
@@ -169,7 +179,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rfg-Am-CeD"/>
                         <constraints>
-                            <constraint firstItem="OBx-iI-6wl" firstAttribute="top" secondItem="Ziv-xh-5HA" secondAttribute="top" constant="20" id="1Ud-6l-7mW"/>
+                            <constraint firstItem="OBx-iI-6wl" firstAttribute="top" secondItem="Ziv-xh-5HA" secondAttribute="top" constant="23" id="1Ud-6l-7mW"/>
                             <constraint firstItem="ThQ-O9-ceU" firstAttribute="leading" secondItem="CC8-m1-f0M" secondAttribute="trailing" constant="10" id="5Hy-Te-a1a"/>
                             <constraint firstItem="dbq-Wm-Vhv" firstAttribute="leading" secondItem="Mvb-qF-Gxu" secondAttribute="trailing" constant="8" symbolic="YES" id="F0G-05-sNy"/>
                             <constraint firstAttribute="trailing" secondItem="YZg-vT-eJH" secondAttribute="trailing" constant="39" id="HTp-wM-35z"/>
@@ -203,12 +213,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGh-yB-VdV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1642" y="1020"/>
+            <point key="canvasLocation" x="1564" y="1031"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="GQ5-CV-zVR">
+            <objects>
+                <viewController id="RiP-r5-rfb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BBK-1e-Mzw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="QZm-QR-P3S"/>
+                        <color key="backgroundColor" name="primary"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9HV-3w-LVi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2249" y="846"/>
         </scene>
     </scenes>
     <resources>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="checkmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="pencil.circle" catalog="system" width="128" height="121"/>
         <image name="tray.fill" catalog="system" width="128" height="88"/>
         <namedColor name="containerColor">
             <color red="0.24313725490196078" green="0.24313725490196078" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
