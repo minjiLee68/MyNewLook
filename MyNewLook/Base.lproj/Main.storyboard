@@ -207,9 +207,9 @@
                         <outlet property="check1" destination="YZg-vT-eJH" id="Smq-nu-PJY"/>
                         <outlet property="check2" destination="ThQ-O9-ceU" id="jPm-DY-HAo"/>
                         <outlet property="check3" destination="dbq-Wm-Vhv" id="hko-35-5tT"/>
-                        <outlet property="view1" destination="baH-Uj-XAc" id="ts9-er-xuv"/>
-                        <outlet property="view2" destination="CC8-m1-f0M" id="1xW-bs-CJ1"/>
-                        <outlet property="view3" destination="Mvb-qF-Gxu" id="Er7-GD-r0T"/>
+                        <outlet property="contents1" destination="OBx-iI-6wl" id="9Ix-Fy-yTL"/>
+                        <outlet property="contents2" destination="PUr-eE-FLO" id="RHs-R7-YSQ"/>
+                        <outlet property="contents3" destination="gKa-n8-Ad9" id="zpf-N8-dcG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGh-yB-VdV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

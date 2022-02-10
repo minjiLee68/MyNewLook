@@ -14,8 +14,7 @@ class DataPickerViewController: UIViewController, FSCalendarDelegate, FSCalendar
     @IBOutlet weak var containView: UIView!
     @IBOutlet weak var viewUI: UIView!
     @IBOutlet weak var changeItem: UIButton!
-    
-    let realm = try! Realm()
+
         
     var contentViewController: ContentViewController!
 
@@ -41,18 +40,6 @@ class DataPickerViewController: UIViewController, FSCalendarDelegate, FSCalendar
         let alert = self.storyboard?.instantiateViewController(withIdentifier: "changeItem") as! ChangeItemViewController
         alert.modalPresentationStyle = .overCurrentContext
         present(alert, animated: false, completion: nil)
-    }
-}
-
-extension DataPickerViewController {
-    func realmData() {
-        let date = Date()
-        let text1 = UserDefaults.standard.string(forKey: "contents1")
-        let data1 = Results(name: text1 ?? "title", count: "0", date: date)
-        try! realm.write {
-            realm.add(data1)
-        }
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 }
 
