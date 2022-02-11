@@ -15,6 +15,7 @@ class DataPickerViewController: UIViewController, FSCalendarDelegate, FSCalendar
     @IBOutlet weak var viewUI: UIView!
     @IBOutlet weak var changeItem: UIButton!
 
+    let realm = try! Realm()
         
     var contentViewController: ContentViewController!
 
@@ -40,6 +41,18 @@ class DataPickerViewController: UIViewController, FSCalendarDelegate, FSCalendar
         let alert = self.storyboard?.instantiateViewController(withIdentifier: "changeItem") as! ChangeItemViewController
         alert.modalPresentationStyle = .overCurrentContext
         present(alert, animated: false, completion: nil)
+    }
+}
+
+extension DataPickerViewController {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        let picDay = dateFormatter.string(from: date)
+        
+        let contents = realm.objects(ContentsData.self)
+        let predicateQuery = contents.filter("date = %@", picDay)
+        
     }
 }
 

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ContentViewController: UIViewController {
     @IBOutlet weak var check1: UIButton!
@@ -16,7 +17,9 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var contents2: UILabel!
     @IBOutlet weak var contents3: UILabel!
     
-    var count: Int = 0
+    var count: String = ""
+    var date: String = ""
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,31 +40,69 @@ class ContentViewController: UIViewController {
     @IBAction func checkBtn1(_ sender: UIButton) {
         sender.isSelected.toggle()
         if sender.isSelected == true {
-            count += 1
-        } else if sender.isSelected == false && count != 0 {
-            count -= 1
+            count = "true"
+            realmAdd(name: contents1.text!, count: count)
+        } else if sender.isSelected == false{
+            count = "false"
+            realmUpdate(counts: count)
         }
-        print("\(String(count))")
+        
     }
     
     @IBAction func checkBtn2(_ sender: UIButton) {
         sender.isSelected.toggle()
         if sender.isSelected == true {
-            count += 1
-        } else if sender.isSelected == false && count != 0 {
-            count -= 1
+            count = "true"
+            realmAdd(name: contents2.text!, count: count)
+        } else if sender.isSelected == false{
+            count = "false"
+            realmUpdate(counts: count)
         }
-        print("\(String(count))")
+        
     }
     
     @IBAction func checkBtn3(_ sender: UIButton) {
         sender.isSelected.toggle()
         if sender.isSelected == true {
-            count += 1
-        } else if sender.isSelected == false && count != 0 {
-            count -= 1
+            count = "true"
+            realmAdd(name: contents3.text!, count: count)
+        } else if sender.isSelected == false{
+            count = "false"
+            realmUpdate(counts: count)
         }
-        print("\(String(count))")
+    }
+}
+
+extension ContentViewController {
+    func realmAdd(name: String, count: String) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.timeZone = TimeZone(identifier: "ko_KR")
+        date = dateFormatter.string(from: Date())
+        let data1 = self.contents(name: name, count: count, date: date)
+        try! realm.write {
+            realm.add(data1)
+        }
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+    }
+    
+    func realmUpdate(counts: String) {
+        if let data1 = realm.objects(ContentsData.self).filter(NSPredicate(format: "date = %@", date)).first {
+            try! realm.write {
+                data1.count = counts
+            }
+        }
+    }
+}
+
+extension ContentViewController {
+    func contents(name: String, count: String, date: String) -> ContentsData {
+        let content = ContentsData()
+        content.name = name
+        content.count = count
+        content.date = date
+        
+        return content
     }
 }
 

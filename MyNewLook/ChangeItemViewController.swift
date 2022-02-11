@@ -17,8 +17,6 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var enter: UIButton!
     
-    let realm = try! Realm()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,13 +52,6 @@ extension ChangeItemViewController {
         UserDefaults.standard.set(contents1.text, forKey: "contents1")
         UserDefaults.standard.set(contents2.text, forKey: "contents2")
         UserDefaults.standard.set(contents3.text, forKey: "contents3")
-        
-//        let date = Date()
-//        let data1 = Results(name: contents1.text ?? "title", count: "0", date: date)
-//        try! realm.write {
-//            realm.add(data1)
-//        }
-//        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
 }
 
