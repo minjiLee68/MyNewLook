@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="bottom" secondItem="9xk-yX-9bW" secondAttribute="bottom" id="qb6-1n-eie"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFN-a4-VHk" customClass="FSCalendar">
+                            <view contentMode="scaleToFill" restorationIdentifier="fscalendar" translatesAutoresizingMaskIntoConstraints="NO" id="TFN-a4-VHk" customClass="FSCalendar">
                                 <rect key="frame" x="0.0" y="74" width="414" height="470"/>
                                 <color key="backgroundColor" name="primary"/>
                                 <constraints>
@@ -58,6 +58,10 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="useVeryShortWeekdaySymbols" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="20E-O7-QBZ" id="dac-eD-VwX"/>
+                                    <outlet property="delegate" destination="20E-O7-QBZ" id="vMf-kj-ikB"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNh-iz-sMZ">
                                 <rect key="frame" x="371" y="52" width="28" height="27"/>

@@ -19,12 +19,19 @@ class ContentViewController: UIViewController {
     
     var count: String = ""
     var date: String = ""
-    let realm = try! Realm()
+    var day: Int = 0
+    let viewmodel = RealmResultViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         contentsText()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.timeZone = TimeZone(identifier: "ko_KR")
+        date = dateFormatter.string(from: Date())
+        day = Calendar.current.component(.day, from: Date())
     }
     
     func contentsText() {
@@ -41,10 +48,9 @@ class ContentViewController: UIViewController {
         sender.isSelected.toggle()
         if sender.isSelected == true {
             count = "true"
-            realmAdd(name: contents1.text!, count: count)
+            viewmodel.realmAdd(name: contents1.text!, count: count, date: date, day: day)
         } else if sender.isSelected == false{
             count = "false"
-            realmUpdate(counts: count)
         }
         
     }
@@ -53,56 +59,19 @@ class ContentViewController: UIViewController {
         sender.isSelected.toggle()
         if sender.isSelected == true {
             count = "true"
-            realmAdd(name: contents2.text!, count: count)
+            viewmodel.realmAdd(name: contents1.text!, count: count, date: date, day: day)
         } else if sender.isSelected == false{
             count = "false"
-            realmUpdate(counts: count)
         }
-        
     }
     
     @IBAction func checkBtn3(_ sender: UIButton) {
         sender.isSelected.toggle()
         if sender.isSelected == true {
             count = "true"
-            realmAdd(name: contents3.text!, count: count)
+            viewmodel.realmAdd(name: contents1.text!, count: count, date: date, day: day)
         } else if sender.isSelected == false{
             count = "false"
-            realmUpdate(counts: count)
         }
     }
 }
-
-extension ContentViewController {
-    func realmAdd(name: String, count: String) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd"
-        dateFormatter.timeZone = TimeZone(identifier: "ko_KR")
-        date = dateFormatter.string(from: Date())
-        let data1 = self.contents(name: name, count: count, date: date)
-        try! realm.write {
-            realm.add(data1)
-        }
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-    }
-    
-    func realmUpdate(counts: String) {
-        if let data1 = realm.objects(ContentsData.self).filter(NSPredicate(format: "date = %@", date)).first {
-            try! realm.write {
-                data1.count = counts
-            }
-        }
-    }
-}
-
-extension ContentViewController {
-    func contents(name: String, count: String, date: String) -> ContentsData {
-        let content = ContentsData()
-        content.name = name
-        content.count = count
-        content.date = date
-        
-        return content
-    }
-}
-

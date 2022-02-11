@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A02399527B55E6E00C36E69 /* ChangeItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A02399427B55E6E00C36E69 /* ChangeItemViewController.swift */; };
-		0A0A780427B666410071F67E /* ContentsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A780327B666410071F67E /* ContentsData.swift */; };
+		0A0A780C27B6AC190071F67E /* RealmResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A780B27B6AC190071F67E /* RealmResultViewModel.swift */; };
+		0A0A781027B6BE430071F67E /* DataResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A780F27B6BE430071F67E /* DataResults.swift */; };
 		0A1D06B427AC0DAF00F9CCC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D06B327AC0DAF00F9CCC9 /* AppDelegate.swift */; };
 		0A1D06B627AC0DAF00F9CCC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D06B527AC0DAF00F9CCC9 /* SceneDelegate.swift */; };
 		0A1D06BB27AC0DAF00F9CCC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1D06B927AC0DAF00F9CCC9 /* Main.storyboard */; };
@@ -21,7 +22,8 @@
 
 /* Begin PBXFileReference section */
 		0A02399427B55E6E00C36E69 /* ChangeItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeItemViewController.swift; sourceTree = "<group>"; };
-		0A0A780327B666410071F67E /* ContentsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsData.swift; sourceTree = "<group>"; };
+		0A0A780B27B6AC190071F67E /* RealmResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmResultViewModel.swift; sourceTree = "<group>"; };
+		0A0A780F27B6BE430071F67E /* DataResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResults.swift; sourceTree = "<group>"; };
 		0A1D06B027AC0DAF00F9CCC9 /* MyNewLook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNewLook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A1D06B327AC0DAF00F9CCC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A1D06B527AC0DAF00F9CCC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +53,8 @@
 		0A0A780527B667BB0071F67E /* model */ = {
 			isa = PBXGroup;
 			children = (
-				0A0A780327B666410071F67E /* ContentsData.swift */,
+				0A0A780F27B6BE430071F67E /* DataResults.swift */,
+				0A0A780B27B6AC190071F67E /* RealmResultViewModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -231,9 +234,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A0A780427B666410071F67E /* ContentsData.swift in Sources */,
+				0A0A781027B6BE430071F67E /* DataResults.swift in Sources */,
 				0AFFF3B427B15A9D00F57939 /* ContentViewController.swift in Sources */,
 				0A959DB027AD134A005A58F4 /* DataPickerViewController.swift in Sources */,
+				0A0A780C27B6AC190071F67E /* RealmResultViewModel.swift in Sources */,
 				0A1D06B427AC0DAF00F9CCC9 /* AppDelegate.swift in Sources */,
 				0A1D06B627AC0DAF00F9CCC9 /* SceneDelegate.swift in Sources */,
 				0A02399527B55E6E00C36E69 /* ChangeItemViewController.swift in Sources */,

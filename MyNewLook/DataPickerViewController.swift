@@ -9,13 +9,11 @@ import UIKit
 import FSCalendar
 import RealmSwift
 
-class DataPickerViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
+class DataPickerViewController: UIViewController {
     @IBOutlet weak var calendarOrigin: FSCalendar!
     @IBOutlet weak var containView: UIView!
     @IBOutlet weak var viewUI: UIView!
     @IBOutlet weak var changeItem: UIButton!
-
-    let realm = try! Realm()
         
     var contentViewController: ContentViewController!
 
@@ -24,6 +22,11 @@ class DataPickerViewController: UIViewController, FSCalendarDelegate, FSCalendar
             let containerVC = segue.destination as! ContentViewController
             contentViewController = containerVC
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        calendarOrigin.reloadData()
     }
 
     override func viewDidLoad() {
@@ -44,16 +47,27 @@ class DataPickerViewController: UIViewController, FSCalendarDelegate, FSCalendar
     }
 }
 
-extension DataPickerViewController {
-    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+extension DataPickerViewController: FSCalendarDataSource {
+    func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd"
-        let picDay = dateFormatter.string(from: date)
+        dateFormatter.dateFormat = "dd"
+        let todayDate = Date()
+        let today = dateFormatter.string(from: todayDate)
+        let day = dateFormatter.string(from: date)
         
-        let contents = realm.objects(ContentsData.self)
-        let predicateQuery = contents.filter("date = %@", picDay)
-        
+        if today == day {
+            return "TODAY"
+        }
+        return day
     }
+}
+
+extension DataPickerViewController: FSCalendarDelegate {
+    
+}
+
+extension DataPickerViewController: FSCalendarDelegateAppearance {
+    
 }
 
 extension DataPickerViewController {
