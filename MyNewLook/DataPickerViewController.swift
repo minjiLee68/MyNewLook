@@ -16,8 +16,6 @@ class DataPickerViewController: UIViewController {
     @IBOutlet weak var viewUI: UIView!
     @IBOutlet weak var changeItem: UIButton!
     
-    let viewmodel = RealmResultViewModel.shared
-        
     var contentViewController: ContentViewController!
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

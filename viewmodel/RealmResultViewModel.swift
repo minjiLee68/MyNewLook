@@ -31,8 +31,8 @@ class RealmResultViewModel {
         }
     }
     
-    func realmUpdate(counts: Int, check: String, date: String) {
-        if let data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).first {
+    func realmUpdate(counts: Int, check: String, name: String) {
+        if let data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", name)).first {
             try! realm.write {
                 data1.count = counts
                 data1.check = check
@@ -44,6 +44,8 @@ class RealmResultViewModel {
         let content = DataResults()
         content.name = name
         content.date = date
+        content.check = check
+        content.count = count
         return content
     }
 }
