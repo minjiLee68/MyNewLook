@@ -8,12 +8,15 @@
 import UIKit
 import FSCalendar
 import RealmSwift
+import SwiftUI
 
 class DataPickerViewController: UIViewController {
     @IBOutlet weak var calendarOrigin: FSCalendar!
     @IBOutlet weak var containView: UIView!
     @IBOutlet weak var viewUI: UIView!
     @IBOutlet weak var changeItem: UIButton!
+    
+    let viewmodel = RealmResultViewModel.shared
         
     var contentViewController: ContentViewController!
 
@@ -87,6 +90,7 @@ extension DataPickerViewController {
         calendarOrigin.appearance.selectionColor = .containColor
         calendarOrigin.appearance.titleWeekendColor = .secondary
         calendarOrigin.appearance.titleDefaultColor = .secondary
+        calendarOrigin.appearance.borderDefaultColor = .secondary
         
         calendarOrigin.appearance.titleTodayColor = .secondary
         calendarOrigin.appearance.todayColor = .none

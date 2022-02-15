@@ -54,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				0A0A780F27B6BE430071F67E /* DataResults.swift */,
-				0A0A780B27B6AC190071F67E /* RealmResultViewModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -70,6 +69,7 @@
 		0A1D06A727AC0DAF00F9CCC9 = {
 			isa = PBXGroup;
 			children = (
+				0A5C627327BC0B8200CB2AAA /* viewmodel */,
 				0A0A780627B667CA0071F67E /* storyboard */,
 				0A0A780527B667BB0071F67E /* model */,
 				0A1D06B227AC0DAF00F9CCC9 /* MyNewLook */,
@@ -100,6 +100,14 @@
 				0A1D06C127AC0DB000F9CCC9 /* Info.plist */,
 			);
 			path = MyNewLook;
+			sourceTree = "<group>";
+		};
+		0A5C627327BC0B8200CB2AAA /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				0A0A780B27B6AC190071F67E /* RealmResultViewModel.swift */,
+			);
+			path = viewmodel;
 			sourceTree = "<group>";
 		};
 		99F4345F1F669D24682F7A3B /* Pods */ = {

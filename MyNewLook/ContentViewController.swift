@@ -17,21 +17,16 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var contents2: UILabel!
     @IBOutlet weak var contents3: UILabel!
     
-    var count: String = ""
+    var check: String = ""
+    var count: Int = 0
     var date: String = ""
-    var day: Int = 0
-    let viewmodel = RealmResultViewModel()
+    let viewmodel = RealmResultViewModel.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         contentsText()
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd"
-        dateFormatter.timeZone = TimeZone(identifier: "ko_KR")
-        date = dateFormatter.string(from: Date())
-        day = Calendar.current.component(.day, from: Date())
+        dateInit()
     }
     
     func contentsText() {
@@ -46,32 +41,48 @@ class ContentViewController: UIViewController {
     
     @IBAction func checkBtn1(_ sender: UIButton) {
         sender.isSelected.toggle()
-        if sender.isSelected == true {
-            count = "true"
-            viewmodel.realmAdd(name: contents1.text!, count: count, date: date, day: day)
-        } else if sender.isSelected == false{
-            count = "false"
+        if sender.isSelected == true && count == 0{
+            count += 1
+            viewmodel.realmAdd(name: contents1.text!, check: "true", date: date, count: count)
+        } else if sender.isSelected == false && count != 0{
+            count -= 1
+            viewmodel.realmUpdate(counts: count, check: "false", date: date)
         }
-        
+        print("--> \(count)")
     }
     
     @IBAction func checkBtn2(_ sender: UIButton) {
         sender.isSelected.toggle()
-        if sender.isSelected == true {
-            count = "true"
-            viewmodel.realmAdd(name: contents1.text!, count: count, date: date, day: day)
-        } else if sender.isSelected == false{
-            count = "false"
+        if sender.isSelected == true && count == 0 {
+            check = "true"
+            count += 1
+            viewmodel.realmAdd(name: contents1.text!, check: check, date: date, count: count)
+        } else if sender.isSelected == false && count != 0 {
+            count -= 1
+            check = "false"
+            viewmodel.realmUpdate(counts: count, check: check, date: date)
         }
     }
     
     @IBAction func checkBtn3(_ sender: UIButton) {
         sender.isSelected.toggle()
-        if sender.isSelected == true {
-            count = "true"
-            viewmodel.realmAdd(name: contents1.text!, count: count, date: date, day: day)
-        } else if sender.isSelected == false{
-            count = "false"
+        if sender.isSelected == true && count == 0 {
+            count += 1
+            check = "true"
+            viewmodel.realmAdd(name: contents1.text!, check: "true", date: date, count: count)
+        } else if sender.isSelected == false && count != 0 {
+            check = "false"
+            count -= 1
+            viewmodel.realmUpdate(counts: count, check: "false", date: date)
         }
+    }
+}
+
+extension ContentViewController {
+    func dateInit() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYYMMdd"
+        dateFormatter.timeZone = TimeZone(identifier: "ko_KR")
+        date = dateFormatter.string(from: Date())
     }
 }
