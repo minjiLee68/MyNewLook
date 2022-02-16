@@ -16,6 +16,10 @@ class DataPickerViewController: UIViewController {
     @IBOutlet weak var viewUI: UIView!
     @IBOutlet weak var changeItem: UIButton!
     
+    var text1: String = ""
+    var text2: String = ""
+    var text3: String = ""
+    
     var contentViewController: ContentViewController!
     let viewmodel = RealmResultViewModel.shared
 
@@ -38,6 +42,7 @@ class DataPickerViewController: UIViewController {
         calendarStyle()
         viewDesign()
         calendarStyle()
+        titleLable()
         
         changeItem.addTarget(self, action:  #selector(goAlert), for: .touchUpInside)
     }
@@ -46,6 +51,12 @@ class DataPickerViewController: UIViewController {
         let alert = self.storyboard?.instantiateViewController(withIdentifier: "changeItem") as! ChangeItemViewController
         alert.modalPresentationStyle = .overCurrentContext
         present(alert, animated: false, completion: nil)
+    }
+    
+    func titleLable() {
+        text1 = UserDefaults.standard.string(forKey: "contents1") ?? "Title1"
+        text2 = UserDefaults.standard.string(forKey: "contents2") ?? "Title2"
+        text3 = UserDefaults.standard.string(forKey: "contents3") ?? "Title3"
     }
 }
 
@@ -69,7 +80,15 @@ extension DataPickerViewController: FSCalendarDelegate {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYYMMdd"
         let picDate = dateFormatter.string(from: date)
-        viewmodel.fetchObject(date: picDate)
+        viewmodel.fetchObject(date: picDate, title1: text1, title2: text2, title3: text3)
+        let title1 = viewmodel.data1?.name
+        let contentsTitle = contentViewController.contents1.text
+        
+        if title1 == contentsTitle {
+            let check = viewmodel.data1?.check ?? "false"
+            contentViewController.check1.isSelected = Bool(check)!
+            print("\(check)")
+        }
     }
 }
 

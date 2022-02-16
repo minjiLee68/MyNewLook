@@ -49,6 +49,7 @@ extension ChangeItemViewController {
         UserDefaults.standard.set(contents1.text, forKey: "contents1")
         UserDefaults.standard.set(contents2.text, forKey: "contents2")
         UserDefaults.standard.set(contents3.text, forKey: "contents3")
+        self.dismiss(animated: false, completion: nil)
     }
 }
 

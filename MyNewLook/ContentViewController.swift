@@ -24,11 +24,9 @@ class ContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(contentObserver(_:)), name: .observer, object: nil)
-        
-        contentsText()
+
         dateInit()
+        contentsText()
     }
     
     func contentsText() {
@@ -40,12 +38,7 @@ class ContentViewController: UIViewController {
         contents2.text = text2
         contents3.text = text3
     }
-    
-//    @objc func contentObserver(_ noti: Notification) {
-//        OperationQueue.main.addOperation {
-//        }
-//    }
-    
+
     @IBAction func checkBtn1(_ sender: UIButton) {
         sender.isSelected.toggle()
         if sender.isSelected == true || count == 0 {

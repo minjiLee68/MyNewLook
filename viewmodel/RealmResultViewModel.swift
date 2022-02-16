@@ -13,9 +13,10 @@ class RealmResultViewModel {
     private init() {}
     
     static let shared = RealmResultViewModel()
-    var check: String = ""
-    var count: Int = 0
-    var title: String = ""
+    
+    var data1: DataResults?
+    var data2: DataResults?
+    var data3: DataResults?
     
     var realm = try! Realm()
     let dataManager = DataManager.shared
@@ -29,13 +30,12 @@ class RealmResultViewModel {
         }
     }
     
-    func fetchObject(date: String) {
-        if let data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).first {
+    func fetchObject(date: String, title1: String, title2: String, title3: String) {
+        if realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).first != nil {
             try! realm.write {
-                check = data1.check
-                count = data1.count
-                title = data1.name
-                print("\(check) \(count) \(title)")
+                data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", title1)).first
+                data2 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", title2)).first
+                data3 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", title3)).first
             }
         }
     }
@@ -47,10 +47,6 @@ class RealmResultViewModel {
                 data1.check = check
             }
         }
-    }
-    
-    func dataNotification() {
-        dataManager.receiveRealmNotification()
     }
     
     func contents(name: String, date: String, count: Int, check: String) -> DataResults {

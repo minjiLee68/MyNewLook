@@ -20,27 +20,27 @@ class DataManager {
         result = realm?.objects(DataResults.self)
     }
     
-    func receiveRealmNotification() {
-        guard let data = result else { return }
-        
-        notificationToken = data.observe { (changes: RealmCollectionChange) in
-            switch changes {
-                
-            case .error(let error):
-                print("noti error \(error)")
-                
-            case .initial(let results):
-                print("inital count: \(results.count)")
-                
-            case .update(_, let deletions, let insertions, let modifications):
-                print("nori update \(deletions) \(insertions) \(modifications)")
-                NotificationCenter.default.post(name: .observer, object: nil)
-            }
-        }
-    }
-    deinit {
-        notificationToken?.invalidate()
-    }
+//    func receiveRealmNotification() {
+//        guard let data = result else { return }
+//        
+//        notificationToken = data.observe { (changes: RealmCollectionChange) in
+//            switch changes {
+//                
+//            case .error(let error):
+//                print("noti error \(error)")
+//                
+//            case .initial(let results):
+//                print("inital count: \(results.count)")
+//                
+//            case .update(_, let deletions, let insertions, let modifications):
+//                print("nori update \(deletions) \(insertions) \(modifications)")
+//                NotificationCenter.default.post(name: .observer, object: nil)
+//            }
+//        }
+//    }
+//    deinit {
+//        notificationToken?.invalidate()
+//    }
 }
 
 extension Notification.Name {
