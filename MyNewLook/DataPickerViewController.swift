@@ -17,6 +17,7 @@ class DataPickerViewController: UIViewController {
     @IBOutlet weak var changeItem: UIButton!
     
     var contentViewController: ContentViewController!
+    let viewmodel = RealmResultViewModel.shared
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "contentView" {
@@ -64,7 +65,12 @@ extension DataPickerViewController: FSCalendarDataSource {
 }
 
 extension DataPickerViewController: FSCalendarDelegate {
-    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYYMMdd"
+        let picDate = dateFormatter.string(from: date)
+        viewmodel.fetchObject(date: picDate)
+    }
 }
 
 extension DataPickerViewController: FSCalendarDelegateAppearance {

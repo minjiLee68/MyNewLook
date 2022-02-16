@@ -35,7 +35,7 @@ class RealmResultViewModel {
                 check = data1.check
                 count = data1.count
                 title = data1.name
-                print("\(check) \(count)")
+                print("\(check) \(count) \(title)")
             }
         }
     }

@@ -29,7 +29,6 @@ class ContentViewController: UIViewController {
         
         contentsText()
         dateInit()
-        viewUpdate()
     }
     
     func contentsText() {
@@ -84,12 +83,6 @@ class ContentViewController: UIViewController {
             count -= 1
             viewmodel.realmUpdate(counts: count, check: check, name: contents3.text!)
         }
-    }
-}
-
-extension ContentViewController {
-    func viewUpdate() {
-        viewmodel.fetchObject(date: date)
     }
 }
 
