@@ -20,6 +20,8 @@ class DataPickerViewController: UIViewController {
     var text2: String = ""
     var text3: String = ""
     
+    var dateFormatter = DateFormatter()
+    
     var contentViewController: ContentViewController!
     let viewmodel = RealmResultViewModel.shared
 
@@ -62,7 +64,7 @@ class DataPickerViewController: UIViewController {
 
 extension DataPickerViewController: FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
-        let dateFormatter = DateFormatter()
+        dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd"
         let todayDate = Date()
         let today = dateFormatter.string(from: todayDate)
@@ -77,17 +79,33 @@ extension DataPickerViewController: FSCalendarDataSource {
 
 extension DataPickerViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        let dateFormatter = DateFormatter()
+        dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYYMMdd"
+//        let todayDate = Date()
         let picDate = dateFormatter.string(from: date)
-        viewmodel.fetchObject(date: picDate, title1: text1, title2: text2, title3: text3)
-        let title1 = viewmodel.data1?.name
-        let contentsTitle = contentViewController.contents1.text
+//        let today = dateFormatter.string(from: todayDate)
         
-        if title1 == contentsTitle {
-            let check = viewmodel.data1?.check ?? "false"
-            contentViewController.check1.isSelected = Bool(check)!
-            print("\(check)")
+        viewmodel.fetchObject(date: picDate, title1: text1, title2: text2, title3: text3)
+    
+        if viewmodel.data1?.date == picDate {
+            let check1 = viewmodel.data1?.check ?? "false"
+            contentViewController.check1.isSelected = Bool(check1)!
+        } else {
+            contentViewController.check1.isSelected = false
+        }
+        
+        if viewmodel.data2?.date == picDate {
+            let check2 = viewmodel.data2?.check ?? "false"
+            contentViewController.check2.isSelected = Bool(check2)!
+        } else {
+            contentViewController.check2.isSelected = false
+        }
+        
+        if viewmodel.data3?.date == picDate {
+            let check3 = viewmodel.data3?.check ?? "false"
+            contentViewController.check3.isSelected = Bool(check3)!
+        } else {
+            contentViewController.check3.isSelected = false
         }
     }
 }

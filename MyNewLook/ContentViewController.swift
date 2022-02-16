@@ -18,7 +18,6 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var contents3: UILabel!
     
     var check: String = ""
-    var count: Int = 0
     var date: String = ""
     let viewmodel = RealmResultViewModel.shared
     
@@ -41,40 +40,34 @@ class ContentViewController: UIViewController {
 
     @IBAction func checkBtn1(_ sender: UIButton) {
         sender.isSelected.toggle()
-        if sender.isSelected == true || count == 0 {
+        if sender.isSelected == true {
             check = "true"
-            count += 1
-            viewmodel.realmAdd(name: contents1.text!, check: check, date: date, count: count)
-        } else if sender.isSelected == false || count != 0 {
+            viewmodel.realmAdd(name: contents1.text!, check: check, date: date)
+        } else if sender.isSelected == false  {
             check = "false"
-            count -= 1
-            viewmodel.realmUpdate(counts: count, check: check, name: contents1.text!)
+            viewmodel.realmUpdate(check: check, name: contents1.text!)
         }
     }
     
     @IBAction func checkBtn2(_ sender: UIButton) {
         sender.isSelected.toggle()
-        if sender.isSelected == true || count == 0 {
+        if sender.isSelected == true {
             check = "true"
-            count += 1
-            viewmodel.realmAdd(name: contents2.text!, check: check, date: date, count: count)
-        } else if sender.isSelected == false || count != 0 {
-            count -= 1
+            viewmodel.realmAdd(name: contents2.text!, check: check, date: date)
+        } else if sender.isSelected == false {
             check = "false"
-            viewmodel.realmUpdate(counts: count, check: check, name: contents2.text!)
+            viewmodel.realmUpdate(check: check, name: contents2.text!)
         }
     }
     
     @IBAction func checkBtn3(_ sender: UIButton) {
         sender.isSelected.toggle()
-        if sender.isSelected == true || count == 0 {
-            count += 1
+        if sender.isSelected == true {
             check = "true"
-            viewmodel.realmAdd(name: contents3.text!, check: check, date: date, count: count)
-        } else if sender.isSelected == false || count != 0 {
+            viewmodel.realmAdd(name: contents3.text!, check: check, date: date)
+        } else if sender.isSelected == false {
             check = "false"
-            count -= 1
-            viewmodel.realmUpdate(counts: count, check: check, name: contents3.text!)
+            viewmodel.realmUpdate(check: check, name: contents3.text!)
         }
     }
 }

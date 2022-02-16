@@ -12,13 +12,11 @@ class DataResults: Object {
     @objc dynamic var name: String = ""
     @objc dynamic var date: String = ""
     @objc dynamic var check: String = ""
-    @objc dynamic var count: Int = 0
     
-    convenience init(name: String, date: String, count: Int, check: String) {
+    convenience init(name: String, date: String,check: String) {
         self.init()
         self.name = name
         self.date = date
-        self.count = count
         self.check = check
     }
 }

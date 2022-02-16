@@ -14,6 +14,7 @@ class RealmResultViewModel {
     
     static let shared = RealmResultViewModel()
     
+    var result: DataResults?
     var data1: DataResults?
     var data2: DataResults?
     var data3: DataResults?
@@ -21,8 +22,8 @@ class RealmResultViewModel {
     var realm = try! Realm()
     let dataManager = DataManager.shared
     
-    func realmAdd(name: String, check: String, date: String, count: Int) {
-        let mainData = self.contents(name: name, date: date, count: count, check: check)
+    func realmAdd(name: String, check: String, date: String) {
+        let mainData = self.contents(name: name, date: date, check: check)
         
         try! self.realm.write {
             self.realm.add(mainData)
@@ -31,30 +32,30 @@ class RealmResultViewModel {
     }
     
     func fetchObject(date: String, title1: String, title2: String, title3: String) {
-        if realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).first != nil {
+        if let data = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).first {
             try! realm.write {
+                result = data
                 data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", title1)).first
                 data2 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", title2)).first
                 data3 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", title3)).first
+                print("\(data.date)")
             }
         }
     }
     
-    func realmUpdate(counts: Int, check: String, name: String) {
+    func realmUpdate(check: String, name: String) {
         if let data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", name)).first {
             try! realm.write {
-                data1.count = counts
                 data1.check = check
             }
         }
     }
     
-    func contents(name: String, date: String, count: Int, check: String) -> DataResults {
+    func contents(name: String, date: String, check: String) -> DataResults {
         let content = DataResults()
         content.name = name
         content.date = date
         content.check = check
-        content.count = count
         return content
     }
 }
