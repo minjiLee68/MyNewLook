@@ -258,6 +258,9 @@
                                         <color key="textColor" name="secondary"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="RiP-r5-rfb" id="y5C-Sd-VbB"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-M1-xNu">
                                         <rect key="frame" x="68" y="117" width="236" height="30"/>
@@ -268,6 +271,9 @@
                                         <color key="textColor" name="secondary"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="RiP-r5-rfb" id="QYL-Fc-MSy"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C51-3m-wjX">
                                         <rect key="frame" x="68" y="195" width="236" height="30"/>
@@ -278,6 +284,9 @@
                                         <color key="textColor" name="secondary"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="RiP-r5-rfb" id="VD7-sY-3vG"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKi-ef-9Yt">
                                         <rect key="frame" x="100" y="255" width="154" height="61"/>
@@ -286,6 +295,9 @@
                                         <state key="normal" title="입력">
                                             <color key="titleColor" name="secondary"/>
                                         </state>
+                                        <connections>
+                                            <action selector="enter:" destination="RiP-r5-rfb" eventType="touchUpInside" id="pvZ-Ho-dZ1"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jmP-1k-xbK">
                                         <rect key="frame" x="30" y="118" width="28" height="27.5"/>

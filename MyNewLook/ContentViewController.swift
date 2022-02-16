@@ -25,19 +25,27 @@ class ContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        NotificationCenter.default.addObserver(self, selector: #selector(contentObserver(_:)), name: .observer, object: nil)
+        
         contentsText()
         dateInit()
+        viewUpdate()
     }
     
     func contentsText() {
-        let text1 = UserDefaults.standard.string(forKey: "contents1")
-        let text2 = UserDefaults.standard.string(forKey: "contents2")
-        let text3 = UserDefaults.standard.string(forKey: "contents3")
+        let text1 = UserDefaults.standard.string(forKey: "contents1") ?? "Title1"
+        let text2 = UserDefaults.standard.string(forKey: "contents2") ?? "Title2"
+        let text3 = UserDefaults.standard.string(forKey: "contents3") ?? "Title3"
         
-        contents1.text = text1 ?? "Title1"
-        contents2.text = text2 ?? "Title2"
-        contents3.text = text3 ?? "Title3"
+        contents1.text = text1
+        contents2.text = text2
+        contents3.text = text3
     }
+    
+//    @objc func contentObserver(_ noti: Notification) {
+//        OperationQueue.main.addOperation {
+//        }
+//    }
     
     @IBAction func checkBtn1(_ sender: UIButton) {
         sender.isSelected.toggle()
@@ -45,12 +53,11 @@ class ContentViewController: UIViewController {
             check = "true"
             count += 1
             viewmodel.realmAdd(name: contents1.text!, check: check, date: date, count: count)
-        } else {
+        } else if sender.isSelected == false || count != 0 {
             check = "false"
             count -= 1
             viewmodel.realmUpdate(counts: count, check: check, name: contents1.text!)
         }
-        print("---> \(count)")
     }
     
     @IBAction func checkBtn2(_ sender: UIButton) {
@@ -59,12 +66,11 @@ class ContentViewController: UIViewController {
             check = "true"
             count += 1
             viewmodel.realmAdd(name: contents2.text!, check: check, date: date, count: count)
-        } else {
+        } else if sender.isSelected == false || count != 0 {
             count -= 1
             check = "false"
             viewmodel.realmUpdate(counts: count, check: check, name: contents2.text!)
         }
-        print("---> \(count)")
     }
     
     @IBAction func checkBtn3(_ sender: UIButton) {
@@ -73,12 +79,17 @@ class ContentViewController: UIViewController {
             count += 1
             check = "true"
             viewmodel.realmAdd(name: contents3.text!, check: check, date: date, count: count)
-        } else {
+        } else if sender.isSelected == false || count != 0 {
             check = "false"
             count -= 1
             viewmodel.realmUpdate(counts: count, check: check, name: contents3.text!)
         }
-        print("---> \(count)")
+    }
+}
+
+extension ContentViewController {
+    func viewUpdate() {
+        viewmodel.fetchObject(date: date)
     }
 }
 

@@ -20,9 +20,6 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        contents1.delegate = self
-        contents2.delegate = self
-        contents3.delegate = self
         viewDesign()
     }
     

@@ -16,6 +16,7 @@
 		0A1D06BD27AC0DB000F9CCC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A1D06BC27AC0DB000F9CCC9 /* Assets.xcassets */; };
 		0A1D06C027AC0DB000F9CCC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A1D06BE27AC0DB000F9CCC9 /* LaunchScreen.storyboard */; };
 		0A959DB027AD134A005A58F4 /* DataPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */; };
+		0AD102FC27BCDE2D00637A2F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD102FB27BCDE2D00637A2F /* DataManager.swift */; };
 		0AFFF3B427B15A9D00F57939 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF3B327B15A9D00F57939 /* ContentViewController.swift */; };
 		BEDA1593DB5703E5B2B35631 /* Pods_MyNewLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23223DB747C6949B44E90FFF /* Pods_MyNewLook.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		0A1D06BF27AC0DB000F9CCC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A1D06C127AC0DB000F9CCC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPickerViewController.swift; sourceTree = "<group>"; };
+		0AD102FB27BCDE2D00637A2F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0AFFF3B327B15A9D00F57939 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		23223DB747C6949B44E90FFF /* Pods_MyNewLook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyNewLook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7198B993A0580E158F0891B /* Pods-MyNewLook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNewLook.debug.xcconfig"; path = "Target Support Files/Pods-MyNewLook/Pods-MyNewLook.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				0A0A780B27B6AC190071F67E /* RealmResultViewModel.swift */,
+				0AD102FB27BCDE2D00637A2F /* DataManager.swift */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A0A781027B6BE430071F67E /* DataResults.swift in Sources */,
+				0AD102FC27BCDE2D00637A2F /* DataManager.swift in Sources */,
 				0AFFF3B427B15A9D00F57939 /* ContentViewController.swift in Sources */,
 				0A959DB027AD134A005A58F4 /* DataPickerViewController.swift in Sources */,
 				0A0A780C27B6AC190071F67E /* RealmResultViewModel.swift in Sources */,
