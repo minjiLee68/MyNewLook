@@ -21,6 +21,7 @@ class DataPickerViewController: UIViewController {
     var text3: String = ""
     
     var dateFormatter = DateFormatter()
+    var todayDate = Date()
     
     var contentViewController: ContentViewController!
     let viewmodel = RealmResultViewModel.shared
@@ -56,9 +57,9 @@ class DataPickerViewController: UIViewController {
     }
     
     func titleLable() {
-        text1 = UserDefaults.standard.string(forKey: "contents1") ?? "Title1"
-        text2 = UserDefaults.standard.string(forKey: "contents2") ?? "Title2"
-        text3 = UserDefaults.standard.string(forKey: "contents3") ?? "Title3"
+        text1 = viewmodel.title1
+        text2 = viewmodel.title2
+        text3 = viewmodel.title3
     }
 }
 
@@ -66,7 +67,7 @@ extension DataPickerViewController: FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
         dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd"
-        let todayDate = Date()
+        todayDate = Date()
         let today = dateFormatter.string(from: todayDate)
         let day = dateFormatter.string(from: date)
         
@@ -79,12 +80,8 @@ extension DataPickerViewController: FSCalendarDataSource {
 
 extension DataPickerViewController: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYYMMdd"
-//        let todayDate = Date()
-        let picDate = dateFormatter.string(from: date)
-//        let today = dateFormatter.string(from: todayDate)
-        
+        let picDate = dateFormatter.string(from: date)        
         viewmodel.fetchObject(date: picDate, title1: text1, title2: text2, title3: text3)
     
         if viewmodel.data1?.date == picDate {
@@ -110,9 +107,14 @@ extension DataPickerViewController: FSCalendarDelegate {
     }
 }
 
-extension DataPickerViewController: FSCalendarDelegateAppearance {
-    
-}
+//extension DataPickerViewController: FSCalendarDelegateAppearance {
+//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
+//        
+//        dateFormatter.dateFormat = "YYYYMMdd"
+//        let thisDate = dateFormatter.string(from: date)
+//        guard let thisDay = viewmodel.fileterObject(what: thisDate) else { return UIColor.clear }
+//    }
+//}
 
 extension DataPickerViewController {
     func calendarStyle() {
@@ -131,7 +133,7 @@ extension DataPickerViewController {
         calendarOrigin.appearance.selectionColor = .containColor
         calendarOrigin.appearance.titleWeekendColor = .secondary
         calendarOrigin.appearance.titleDefaultColor = .secondary
-        calendarOrigin.appearance.borderDefaultColor = .secondary
+        calendarOrigin.appearance.borderDefaultColor = .lightGray
         
         calendarOrigin.appearance.titleTodayColor = .secondary
         calendarOrigin.appearance.todayColor = .none

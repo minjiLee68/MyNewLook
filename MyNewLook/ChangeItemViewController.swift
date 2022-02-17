@@ -17,6 +17,9 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var enter: UIButton!
     
+    let viewmodel = RealmResultViewModel.shared
+    let contentVC = ContentViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,9 +49,7 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
 
 extension ChangeItemViewController {
     @IBAction func enter(_ sender: UIButton) {
-        UserDefaults.standard.set(contents1.text, forKey: "contents1")
-        UserDefaults.standard.set(contents2.text, forKey: "contents2")
-        UserDefaults.standard.set(contents3.text, forKey: "contents3")
+        viewmodel.titleDB(own: contents1.text ?? "_", two: contents2.text ?? "_", three: contents3.text ?? "_")
         self.dismiss(animated: false, completion: nil)
     }
 }
@@ -76,4 +77,7 @@ extension ChangeItemViewController {
         contents3.layer.addSublayer(border3)
         contents3.textAlignment = .left
     }
+}
+extension Notification.Name {
+    static let titleObserver = Notification.Name("titleObserver")
 }
