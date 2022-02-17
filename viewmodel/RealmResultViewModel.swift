@@ -23,12 +23,6 @@ class RealmResultViewModel {
     let dataManager = DataManager.shared
     
     func realmAdd(name: String, check: String, date: String, count: Int) {
-//        let mainData = self.contents(name: name, date: date, check: check, count: count)
-//
-//        try! self.realm.write {
-//            self.realm.add(mainData)
-//            print("\(Realm.Configuration.defaultConfiguration.fileURL!)")
-//        }
         dataManager.realmAdd(name: name, check: check, date: date, count: count)
     }
     
@@ -44,10 +38,8 @@ class RealmResultViewModel {
     }
     
     func fileterObject(what date: String) -> Results<DataResults>? {
-        guard let data = dataResult else { return nil }
-
-        let object = data.filter("date = %@", date)
-
+        dataResult = realm.objects(DataResults.self)
+        let object = dataResult!.filter(NSPredicate(format: "date = %@", date))
         return object
     }
     

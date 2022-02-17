@@ -107,14 +107,32 @@ extension DataPickerViewController: FSCalendarDelegate {
     }
 }
 
-//extension DataPickerViewController: FSCalendarDelegateAppearance {
-//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
-//        
-//        dateFormatter.dateFormat = "YYYYMMdd"
-//        let thisDate = dateFormatter.string(from: date)
-//        guard let thisDay = viewmodel.fileterObject(what: thisDate) else { return UIColor.clear }
-//    }
-//}
+extension DataPickerViewController: FSCalendarDelegateAppearance {
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
+        
+        dateFormatter.dateFormat = "YYYYMMdd"
+        let thisDate = dateFormatter.string(from: date)
+        guard let thisDay = viewmodel.fileterObject(what: thisDate) else { return UIColor.clear }
+        
+        let data = thisDay.first
+
+        if data != nil {
+            switch data?.count {
+            case 1:
+                print("\(data?.count ?? 0)")
+                return UIColor.lightGray
+            case 2:
+                print("\(data?.count ?? 0)")
+                return UIColor.gray
+            default:
+                return UIColor.clear
+            }
+        } else {
+            print("\(thisDate)")
+            return UIColor.clear
+        }
+    }
+}
 
 extension DataPickerViewController {
     func calendarStyle() {
