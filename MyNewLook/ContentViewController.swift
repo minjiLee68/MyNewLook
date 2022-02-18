@@ -24,75 +24,71 @@ class ContentViewController: UIViewController {
     
     let viewmodel = RealmResultViewModel.shared
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        contentsText()
+        print("viewWillAppear")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dateInit()
-        contentsText()
     }
     
     func contentsText() {
         contents1.text = viewmodel.title1
         contents2.text = viewmodel.title2
         contents3.text = viewmodel.title3
-        
-//        let data = viewmodel.realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).first
-//        let db = data?.count
-//        switch db {
-//        case 1:
-//            return print("1")
-//        default:
-//            return print("nil")
-//        }
     }
 
     @IBAction func checkBtn1(_ sender: UIButton) {
         sender.isSelected.toggle()
-        if sender.isSelected == true || count == 0 {
+        countData()
+        if sender.isSelected == true || checkCount == 0 {
             check = "true"
-            count += 1
+            checkCount += 1
             viewmodel.realmAdd(name: contents1.text!, check: check, date: date, count: checkCount)
         } else if sender.isSelected == false {
             check = "false"
-            count -= 1
+            checkCount -= 1
             viewmodel.realmUpdate(check: check, name: contents1.text!, count: checkCount)
         }
-        countData()
     }
     
     @IBAction func checkBtn2(_ sender: UIButton) {
         sender.isSelected.toggle()
-        if sender.isSelected == true || count == 0 {
+        countData()
+        if sender.isSelected == true || checkCount == 0 {
             check = "true"
-            count += 1
+            checkCount += 1
             viewmodel.realmAdd(name: contents2.text!, check: check, date: date, count: checkCount)
-        } else if sender.isSelected == false || count != 0 {
+        } else if sender.isSelected == false {
             check = "false"
-            count -= 1
+            checkCount -= 1
             viewmodel.realmUpdate(check: check, name: contents2.text!, count: checkCount)
         }
-        countData()
     }
     
     @IBAction func checkBtn3(_ sender: UIButton) {
         sender.isSelected.toggle()
-        if sender.isSelected == true {
+        countData()
+        if sender.isSelected == true || checkCount == 0 {
             check = "true"
-            count += 1
+            checkCount += 1
             viewmodel.realmAdd(name: contents3.text!, check: check, date: date, count: checkCount)
         } else if sender.isSelected == false {
             check = "false"
-            count -= 1
+            checkCount -= 1
             viewmodel.realmUpdate(check: check, name: contents3.text!, count: checkCount)
         }
-        countData()
     }
 }
 
 extension ContentViewController {
     func countData() {
-        viewmodel.countDB(count: count)
-        checkCount = viewmodel.countDBSet(key: "count") ?? 0
+        checkCount = viewmodel.countDBSet(key: date) ?? 0
     }
 }
 

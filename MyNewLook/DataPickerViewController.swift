@@ -24,7 +24,8 @@ class DataPickerViewController: UIViewController {
     var todayDate = Date()
     
     var contentViewController: ContentViewController!
-    let viewmodel = RealmResultViewModel.shared
+    var subView = ChangeItemViewController()
+    var viewmodel = RealmResultViewModel.shared
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "contentView" {
@@ -40,20 +41,16 @@ class DataPickerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        overrideUserInterfaceStyle = .light
         
         calendarStyle()
         viewDesign()
         calendarStyle()
         titleLable()
         
-        changeItem.addTarget(self, action:  #selector(goAlert), for: .touchUpInside)
     }
     
-    @objc func goAlert() {
-        let alert = self.storyboard?.instantiateViewController(withIdentifier: "changeItem") as! ChangeItemViewController
-        alert.modalPresentationStyle = .overCurrentContext
-        present(alert, animated: false, completion: nil)
+    @IBAction func EditBtn(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "changeItem", sender: self)
     }
     
     func titleLable() {
@@ -114,21 +111,15 @@ extension DataPickerViewController: FSCalendarDelegateAppearance {
         let thisDate = dateFormatter.string(from: date)
         guard let thisDay = viewmodel.fileterObject(what: thisDate) else { return UIColor.clear }
         
-        let data = thisDay.first
-
-        if data != nil {
-            switch data?.count {
-            case 1:
-                print("\(data?.count ?? 0)")
-                return UIColor.lightGray
-            case 2:
-                print("\(data?.count ?? 0)")
-                return UIColor.gray
-            default:
-                return UIColor.clear
-            }
-        } else {
-            print("\(thisDate)")
+        switch thisDay.count {
+        case 0:
+            print("\(thisDay.count )")
+            return UIColor.black
+        case 1:
+            print("\(thisDay.count )")
+            return UIColor.blue
+        default:
+            print("\(thisDay.count)")
             return UIColor.clear
         }
     }

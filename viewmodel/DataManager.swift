@@ -32,15 +32,7 @@ class DataManager {
             print("\(Realm.Configuration.defaultConfiguration.fileURL!)")
         }
     }
-    
-//    func fileterObject(what date: String) -> Results<DataResults>? {
-//        guard let data = result else { return nil }
-//
-//        let object = data.filter("date = %@", date)
-//
-//        return object
-//    }
-    
+
     func realmUpdate(check: String, name: String, count: Int) {
         if let data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", name)).first {
             try! realm.write {

@@ -13,7 +13,6 @@ class RealmResultViewModel {
     private init() {}
     
     static let shared = RealmResultViewModel()
-    var dataResult: Results<DataResults>?
     
     var data1: DataResults?
     var data2: DataResults?
@@ -37,22 +36,22 @@ class RealmResultViewModel {
         }
     }
     
-    func fileterObject(what date: String) -> Results<DataResults>? {
-        dataResult = realm.objects(DataResults.self)
-        let object = dataResult!.filter(NSPredicate(format: "date = %@", date))
-        return object
+    func fileterObject(what date: String) -> DataResults? {
+        let data = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).first
+        return data
     }
     
     func realmUpdate(check: String, name: String, count: Int) {
         dataManager.realmUpdate(check: check, name: name, count: count)
     }
     
-    func countDB(count: Int) {
-        dataManager.countDB(count: count)
-    }
-    
-    func countDBSet(key defaultName: String) -> Int? {
-        dataManager.countDBSet(key: defaultName)
+//    func countDB(count: Int) {
+//        dataManager.countDB(count: count)
+//    }
+//    
+    func countDBSet(key date: String) -> Int? {
+        let countDB = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).last
+        return countDB?.count
     }
     
     func titleDB(own title: String, two title2: String, three title3: String) {
@@ -63,15 +62,14 @@ class RealmResultViewModel {
     
     var title1: String = {
         return UserDefaults.standard.string(forKey: "title1")
-    }() ?? "_"
-    
+    }() ?? "nil"
     var title2: String = {
         return UserDefaults.standard.string(forKey: "title2")
-    }() ?? "_"
+    }() ?? "nil"
     
     var title3: String = {
         return UserDefaults.standard.string(forKey: "title3")
-    }() ?? "_"
+    }() ?? "nil"
     
     func contents(name: String, date: String, check: String, count: Int) -> DataResults {
         dataManager.contents(name: name, date: date, check: check, count: count)

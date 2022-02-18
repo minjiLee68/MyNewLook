@@ -13,29 +13,18 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var contents1: UITextField!
     @IBOutlet weak var contents2: UITextField!
     @IBOutlet weak var contents3: UITextField!
-    @IBOutlet weak var viewUI: UIView!
     
     @IBOutlet weak var enter: UIButton!
-    
+
     let viewmodel = RealmResultViewModel.shared
-    let contentVC = ContentViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewDesign()
+        swipeRecognizer()
     }
     
     override func viewDidLayoutSubviews() {
         textfieldCustom()
-    }
-    
-    @IBAction func tapBG(_ sender: Any) {
-        self.dismiss(animated: false, completion: nil)
-    }
-    
-    func viewDesign() {
-        viewUI.layer.cornerRadius = 28
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -45,12 +34,30 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
+    
+    func swipeRecognizer() {
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture(_:)))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(swipeRight)
+    }
 }
 
 extension ChangeItemViewController {
     @IBAction func enter(_ sender: UIButton) {
-        viewmodel.titleDB(own: contents1.text ?? "_", two: contents2.text ?? "_", three: contents3.text ?? "_")
-        self.dismiss(animated: false, completion: nil)
+        viewmodel.titleDB(own: contents1.text! , two: contents2.text!, three: contents3.text!)
+        
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizer.Direction.right:
+                self.presentingViewController?.dismiss(animated: true, completion: nil)
+            default:
+                break
+            }
+        }
     }
 }
 
@@ -77,7 +84,4 @@ extension ChangeItemViewController {
         contents3.layer.addSublayer(border3)
         contents3.textAlignment = .left
     }
-}
-extension Notification.Name {
-    static let titleObserver = Notification.Name("titleObserver")
 }
