@@ -37,7 +37,7 @@ class RealmResultViewModel {
     }
     
     func fileterObject(what date: String) -> DataResults? {
-        let data = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).first
+        let data = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).last
         return data
     }
     
@@ -45,10 +45,6 @@ class RealmResultViewModel {
         dataManager.realmUpdate(check: check, name: name, count: count)
     }
     
-//    func countDB(count: Int) {
-//        dataManager.countDB(count: count)
-//    }
-//    
     func countDBSet(key date: String) -> Int? {
         let countDB = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).last
         return countDB?.count
@@ -62,14 +58,14 @@ class RealmResultViewModel {
     
     var title1: String = {
         return UserDefaults.standard.string(forKey: "title1")
-    }() ?? "nil"
+    }() ?? "Title1"
     var title2: String = {
         return UserDefaults.standard.string(forKey: "title2")
-    }() ?? "nil"
+    }() ?? "Title2"
     
     var title3: String = {
         return UserDefaults.standard.string(forKey: "title3")
-    }() ?? "nil"
+    }() ?? "Title3"
     
     func contents(name: String, date: String, check: String, count: Int) -> DataResults {
         dataManager.contents(name: name, date: date, check: check, count: count)

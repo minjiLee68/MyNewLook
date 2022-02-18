@@ -13,6 +13,7 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var contents1: UITextField!
     @IBOutlet weak var contents2: UITextField!
     @IBOutlet weak var contents3: UITextField!
+    @IBOutlet weak var titleLable: UILabel!
     
     @IBOutlet weak var enter: UIButton!
 
@@ -20,6 +21,11 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //키보드 디랙션
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         swipeRecognizer()
     }
     
@@ -40,12 +46,30 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
         swipeRight.direction = UISwipeGestureRecognizer.Direction.right
         self.view.addGestureRecognizer(swipeRight)
     }
+    
+    @IBAction func tapBG(_ sender: Any) {
+        view.endEditing(true)
+    }
+}
+
+extension ChangeItemViewController {
+    @objc private func adjustInputView(noti: Notification) {
+        guard let userInfo = noti.userInfo else { return }
+        
+        guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        
+        if noti.name == UIResponder.keyboardWillShowNotification {
+            _ = keyboardFrame.height - view.safeAreaInsets.bottom
+//            inputViewBottom.constant = adjustmentHeight
+        } else {
+//            inputViewBottom.constant = 0
+        }
+    }
 }
 
 extension ChangeItemViewController {
     @IBAction func enter(_ sender: UIButton) {
         viewmodel.titleDB(own: contents1.text! , two: contents2.text!, three: contents3.text!)
-        
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     

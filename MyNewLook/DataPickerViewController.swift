@@ -46,11 +46,14 @@ class DataPickerViewController: UIViewController {
         viewDesign()
         calendarStyle()
         titleLable()
-        
     }
     
-    @IBAction func EditBtn(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "changeItem", sender: self)
+    @IBAction func editBtn(_ sender: UIButton) {
+        guard let svc = self.storyboard?.instantiateViewController(withIdentifier: "changeItem") else {
+            return
+        }
+        svc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.present(svc, animated: true, completion: nil)
     }
     
     func titleLable() {
@@ -64,7 +67,6 @@ extension DataPickerViewController: FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
         dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd"
-        todayDate = Date()
         let today = dateFormatter.string(from: todayDate)
         let day = dateFormatter.string(from: date)
         
@@ -112,14 +114,13 @@ extension DataPickerViewController: FSCalendarDelegateAppearance {
         guard let thisDay = viewmodel.fileterObject(what: thisDate) else { return UIColor.clear }
         
         switch thisDay.count {
-        case 0:
-            print("\(thisDay.count )")
-            return UIColor.black
         case 1:
-            print("\(thisDay.count )")
-            return UIColor.blue
+            return UIColor.check1Color
+        case 2:
+            return UIColor.check2Color
+        case 3:
+            return UIColor.check3Color
         default:
-            print("\(thisDay.count)")
             return UIColor.clear
         }
     }
@@ -142,7 +143,7 @@ extension DataPickerViewController {
         calendarOrigin.appearance.selectionColor = .containColor
         calendarOrigin.appearance.titleWeekendColor = .secondary
         calendarOrigin.appearance.titleDefaultColor = .secondary
-        calendarOrigin.appearance.borderDefaultColor = .lightGray
+        calendarOrigin.appearance.borderDefaultColor = .borderColor
         
         calendarOrigin.appearance.titleTodayColor = .secondary
         calendarOrigin.appearance.todayColor = .none
@@ -159,4 +160,8 @@ extension UIColor {
     class var primary: UIColor? { return UIColor(named: "primary") }
     class var secondary: UIColor? { return UIColor(named: "secondary") }
     class var containColor: UIColor? { return UIColor(named: "containerColor") }
+    class var check1Color: UIColor? { return UIColor(named: "check1")}
+    class var check2Color: UIColor? { return UIColor(named: "check2")}
+    class var check3Color: UIColor? { return UIColor(named: "check3")}
+    class var borderColor: UIColor? { return UIColor(named: "borderColor")}
 }
