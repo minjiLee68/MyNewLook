@@ -41,8 +41,8 @@ class RealmResultViewModel {
         return data
     }
     
-    func realmUpdate(check: String, name: String, count: Int) {
-        dataManager.realmUpdate(check: check, name: name, count: count)
+    func realmUpdate(check: String, name: String) {
+        dataManager.realmUpdate(check: check, name: name)
     }
     
     func countDBSet(key date: String) -> Int? {

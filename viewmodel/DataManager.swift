@@ -33,11 +33,11 @@ class DataManager {
         }
     }
 
-    func realmUpdate(check: String, name: String, count: Int) {
+    func realmUpdate(check: String, name: String) {
         if let data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", name)).first {
             try! realm.write {
                 data1.check = check
-                data1.count = count
+                data1.count -= 1
             }
         }
     }
@@ -50,25 +50,7 @@ class DataManager {
         let count = UserDefaults.standard.integer(forKey: defaultName)
         return count
     }
-    
-//    func titleDB(own title: String, two title2: String, three title3: String) {
-//        UserDefaults.standard.set(title, forKey: "title1")
-//        UserDefaults.standard.set(title2, forKey: "title2")
-//        UserDefaults.standard.set(title3, forKey: "title3")
-//    }
-//    
-//    var title1: String = {
-//        return UserDefaults.standard.string(forKey: "title1")
-//    }() ?? "nil"
-//    
-//    var title2: String = {
-//        return UserDefaults.standard.string(forKey: "title2")
-//    }() ?? "nil"
-//    
-//    var title3: String = {
-//        return UserDefaults.standard.string(forKey: "title3")
-//    }() ?? "nil"
-    
+
     func contents(name: String, date: String, check: String, count: Int) -> DataResults {
         let content = DataResults()
         content.name = name
