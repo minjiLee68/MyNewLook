@@ -139,6 +139,8 @@
                         <outlet property="contents2" destination="Tj3-aD-ayo" id="GS9-lp-euI"/>
                         <outlet property="contents3" destination="qRF-xR-yUM" id="rRZ-lE-Tdy"/>
                         <outlet property="enter" destination="0FD-WU-ZX8" id="VAb-y9-BD3"/>
+                        <outlet property="inputViewBottom" destination="aSo-Ua-PvX" id="OMJ-Rq-apn"/>
+                        <outlet property="titleLable" destination="L5N-lx-QjQ" id="aPZ-yt-hQf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ygg-yh-BuU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

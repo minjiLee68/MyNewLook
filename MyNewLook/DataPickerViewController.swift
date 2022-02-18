@@ -103,6 +103,8 @@ extension DataPickerViewController: FSCalendarDelegate {
         } else {
             contentViewController.check3.isSelected = false
         }
+        
+        contentViewController.picDay = picDate
     }
 }
 

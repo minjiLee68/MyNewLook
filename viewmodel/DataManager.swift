@@ -17,7 +17,7 @@ class DataManager {
     var data1: DataResults?
     var data2: DataResults?
     var data3: DataResults?
-    
+    var notificationToken: NotificationToken?
     
     private init() {
         realm = try! Realm()
@@ -59,4 +59,8 @@ class DataManager {
         content.count = count
         return content
     }
+}
+
+extension Notification.Name {
+    static let observer = Notification.Name("observer")
 }

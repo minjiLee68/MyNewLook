@@ -14,6 +14,7 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var contents2: UITextField!
     @IBOutlet weak var contents3: UITextField!
     @IBOutlet weak var titleLable: UILabel!
+    @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
     
     @IBOutlet weak var enter: UIButton!
 
@@ -59,10 +60,10 @@ extension ChangeItemViewController {
         guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         
         if noti.name == UIResponder.keyboardWillShowNotification {
-            _ = keyboardFrame.height - view.safeAreaInsets.bottom
-//            inputViewBottom.constant = adjustmentHeight
+            let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom
+            inputViewBottom.constant = adjustmentHeight
         } else {
-//            inputViewBottom.constant = 0
+            inputViewBottom.constant = 130
         }
     }
 }

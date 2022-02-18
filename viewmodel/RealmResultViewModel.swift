@@ -10,8 +10,6 @@ import Foundation
 import RealmSwift
 
 class RealmResultViewModel {
-    private init() {}
-    
     static let shared = RealmResultViewModel()
     
     var data1: DataResults?
@@ -56,6 +54,11 @@ class RealmResultViewModel {
         UserDefaults.standard.set(title3, forKey: "title3")
     }
     
+    func anyData(date: String) -> DataResults? {
+        let anyDay = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date))
+        return anyDay.first
+    }
+    
     var title1: String = {
         return UserDefaults.standard.string(forKey: "title1")
     }() ?? "Title1"
@@ -71,3 +74,4 @@ class RealmResultViewModel {
         dataManager.contents(name: name, date: date, check: check, count: count)
     }
 }
+
