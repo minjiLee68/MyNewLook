@@ -16,6 +16,11 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var contents1: UILabel!
     @IBOutlet weak var contents2: UILabel!
     @IBOutlet weak var contents3: UILabel!
+    @IBOutlet weak var notPicDay: UILabel!
+    
+    @IBOutlet weak var v1: UIView!
+    @IBOutlet weak var v2: UIView!
+    @IBOutlet weak var v3: UIView!
     
     var check: String = ""
     var date: String = ""
@@ -46,16 +51,18 @@ class ContentViewController: UIViewController {
     @IBAction func checkBtn1(_ sender: UIButton) {
         sender.isSelected.toggle()
         countData()
-        if checkCount == 0 {
+        if picDay == "" || picDay == date {
             check = "true"
             checkCount += 1
             viewmodel.realmAdd(name: contents1.text!, check: check, date: date, count: checkCount)
-        } else if sender.isSelected == false && checkCount != 0 {
+        } else if sender.isSelected == false {
             check = "false"
-            viewmodel.realmUpdate(check: check, name: contents1.text!)
+            viewmodel.realmUpdate(check: check, name: contents1.text!, date: date)
         }
         // 선택한 날짜와 오늘 날짜가 다르면..
         if picDay.count == 8 && picDay != date {
+            countData2()
+            check = "true"
             picDate(name: contents1.text!, check: check, count: checkCount)
         }
     }
@@ -63,34 +70,38 @@ class ContentViewController: UIViewController {
     @IBAction func checkBtn2(_ sender: UIButton) {
         sender.isSelected.toggle()
         countData()
-        if sender.isSelected == true || checkCount == 0 {
+        if picDay == "" || picDay == date {
             check = "true"
             checkCount += 1
             viewmodel.realmAdd(name: contents2.text!, check: check, date: date, count: checkCount)
-        } else if sender.isSelected == false && checkCount != 0 {
+        } else if sender.isSelected == false {
             check = "false"
-            viewmodel.realmUpdate(check: check, name: contents2.text!)
+//            viewmodel.realmUpdate(check: check, name: contents2.text!)
         }
         // 선택한 날짜와 오늘 날짜가 다르면..
         if picDay.count == 8 && picDay != date {
-            picDate(name: contents1.text!, check: check, count: checkCount)
+            countData2()
+            check = "true"
+            picDate(name: contents2.text!, check: check, count: checkCount)
         }
     }
     
     @IBAction func checkBtn3(_ sender: UIButton) {
         sender.isSelected.toggle()
         countData()
-        if sender.isSelected == true || checkCount == 0 {
+        if picDay == "" || picDay == date {
             check = "true"
             checkCount += 1
             viewmodel.realmAdd(name: contents3.text!, check: check, date: date, count: checkCount)
-        } else if sender.isSelected == false && checkCount != 0 {
+        } else if sender.isSelected == false {
             check = "false"
-            viewmodel.realmUpdate(check: check, name: contents3.text!)
+//            viewmodel.realmUpdate(check: check, name: contents3.text!)
         }
         // 선택한 날짜와 오늘 날짜가 다르면..
         if picDay.count == 8 && picDay != date {
-            picDate(name: contents1.text!, check: check, count: checkCount)
+            countData2()
+            check = "true"
+            picDate(name: contents3.text!, check: check, count: checkCount)
         }
     }
 }
@@ -100,10 +111,33 @@ extension ContentViewController {
         checkCount = viewmodel.countDBSet(key: date) ?? 0
     }
     
+    func countData2() {
+        checkCount = viewmodel.countDBSet(key: picDay) ?? 0
+    }
+    
     func picDate(name: String, check: String, count: Int) {
         let db = viewmodel.anyData(date: picDay)?.name
         if db != name {
             viewmodel.realmAdd(name: name, check: check, date: picDay, count: checkCount)
+        }
+    }
+}
+
+extension ContentViewController {
+    func picDaySelected() {
+        if picDay != "" {
+            notPicDay.isHidden = true
+            contents1.isHidden = false
+            contents2.isHidden = false
+            contents3.isHidden = false
+            
+            check1.isHidden = false
+            check2.isHidden = false
+            check3.isHidden = false
+            
+            v1.isHidden = false
+            v2.isHidden = false
+            v3.isHidden = false
         }
     }
 }

@@ -105,6 +105,7 @@ extension DataPickerViewController: FSCalendarDelegate {
         }
         
         contentViewController.picDay = picDate
+        contentViewController.picDaySelected()
     }
 }
 

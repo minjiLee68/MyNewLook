@@ -24,14 +24,10 @@ class RealmResultViewModel {
     }
     
     func fetchObject(date: String, title1: String, title2: String, title3: String) {
-        if let data = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).first {
-            try! realm.write {
-                data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", title1)).first
-                data2 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", title2)).first
-                data3 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", title3)).first
-                print("\(data.date)")
-            }
-        }
+        data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@ AND date = %@", title1, date)).first
+        data2 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@ AND date = %@", title2, date)).first
+        data3 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@ AND date = %@", title3, date)).first
+        print("\(data1?.check ?? "nil")")
     }
     
     func fileterObject(what date: String) -> DataResults? {
@@ -39,8 +35,8 @@ class RealmResultViewModel {
         return data
     }
     
-    func realmUpdate(check: String, name: String) {
-        dataManager.realmUpdate(check: check, name: name)
+    func realmUpdate(check: String, name: String, date: String) {
+        dataManager.realmUpdate(check: check, name: name, date: date)
     }
     
     func countDBSet(key date: String) -> Int? {

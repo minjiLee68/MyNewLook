@@ -33,8 +33,8 @@ class DataManager {
         }
     }
 
-    func realmUpdate(check: String, name: String) {
-        if let data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@", name)).first {
+    func realmUpdate(check: String, name: String, date: String) {
+        if let data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@ AND date = %@", name, date)).first {
             try! realm.write {
                 data1.check = check
                 data1.count -= 1
