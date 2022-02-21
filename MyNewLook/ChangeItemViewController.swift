@@ -15,8 +15,6 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var contents3: UITextField!
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
-    
-    @IBOutlet weak var enter: UIButton!
 
     let viewmodel = RealmResultViewModel.shared
     
@@ -49,7 +47,9 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func tapBG(_ sender: Any) {
-        view.endEditing(true)
+        contents1.resignFirstResponder()
+        contents2.resignFirstResponder()
+        contents3.resignFirstResponder()
     }
 }
 
@@ -58,12 +58,11 @@ extension ChangeItemViewController {
         guard let userInfo = noti.userInfo else { return }
         
         guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
-        
         if noti.name == UIResponder.keyboardWillShowNotification {
             let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom
             inputViewBottom.constant = adjustmentHeight
         } else {
-            inputViewBottom.constant = 130
+            inputViewBottom.constant = 165
         }
     }
 }
@@ -71,7 +70,7 @@ extension ChangeItemViewController {
 extension ChangeItemViewController {
     @IBAction func enter(_ sender: UIButton) {
         viewmodel.titleDB(own: contents1.text! , two: contents2.text!, three: contents3.text!)
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {

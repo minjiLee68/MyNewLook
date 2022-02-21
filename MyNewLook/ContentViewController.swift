@@ -51,67 +51,45 @@ class ContentViewController: UIViewController {
     @IBAction func checkBtn1(_ sender: UIButton) {
         sender.isSelected.toggle()
         countData()
-        if picDay == "" || picDay == date {
+        if sender.isSelected == true {
             check = "true"
             checkCount += 1
-            viewmodel.realmAdd(name: contents1.text!, check: check, date: date, count: checkCount)
+            viewmodel.realmAdd(name: contents1.text!, check: check, date: picDay, count: checkCount)
         } else if sender.isSelected == false {
             check = "false"
-            viewmodel.realmUpdate(check: check, name: contents1.text!, date: date)
-        }
-        // 선택한 날짜와 오늘 날짜가 다르면..
-        if picDay.count == 8 && picDay != date {
-            countData2()
-            check = "true"
-            picDate(name: contents1.text!, check: check, count: checkCount)
+            viewmodel.realmUpdate(check: check, name: contents1.text!, date: picDay)
         }
     }
     
     @IBAction func checkBtn2(_ sender: UIButton) {
         sender.isSelected.toggle()
         countData()
-        if picDay == "" || picDay == date {
+        if sender.isSelected == true {
             check = "true"
             checkCount += 1
-            viewmodel.realmAdd(name: contents2.text!, check: check, date: date, count: checkCount)
+            viewmodel.realmAdd(name: contents2.text!, check: check, date: picDay, count: checkCount)
         } else if sender.isSelected == false {
             check = "false"
-//            viewmodel.realmUpdate(check: check, name: contents2.text!)
-        }
-        // 선택한 날짜와 오늘 날짜가 다르면..
-        if picDay.count == 8 && picDay != date {
-            countData2()
-            check = "true"
-            picDate(name: contents2.text!, check: check, count: checkCount)
+            viewmodel.realmUpdate(check: check, name: contents2.text!, date: picDay)
         }
     }
     
     @IBAction func checkBtn3(_ sender: UIButton) {
         sender.isSelected.toggle()
         countData()
-        if picDay == "" || picDay == date {
+        if sender.isSelected == true {
             check = "true"
             checkCount += 1
-            viewmodel.realmAdd(name: contents3.text!, check: check, date: date, count: checkCount)
+            viewmodel.realmAdd(name: contents3.text!, check: check, date: picDay, count: checkCount)
         } else if sender.isSelected == false {
             check = "false"
-//            viewmodel.realmUpdate(check: check, name: contents3.text!)
-        }
-        // 선택한 날짜와 오늘 날짜가 다르면..
-        if picDay.count == 8 && picDay != date {
-            countData2()
-            check = "true"
-            picDate(name: contents3.text!, check: check, count: checkCount)
+            viewmodel.realmUpdate(check: check, name: contents3.text!, date: picDay)
         }
     }
 }
 
 extension ContentViewController {
     func countData() {
-        checkCount = viewmodel.countDBSet(key: date) ?? 0
-    }
-    
-    func countData2() {
         checkCount = viewmodel.countDBSet(key: picDay) ?? 0
     }
     
