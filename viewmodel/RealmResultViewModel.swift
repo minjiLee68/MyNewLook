@@ -44,10 +44,11 @@ class RealmResultViewModel {
         return countDB?.count
     }
     
-    func titleDB(own title: String, two title2: String, three title3: String) {
+    func titleDB(own title: String, two title2: String, three title3: String, isTitle: Bool) {
         UserDefaults.standard.set(title, forKey: "title1")
         UserDefaults.standard.set(title2, forKey: "title2")
         UserDefaults.standard.set(title3, forKey: "title3")
+        UserDefaults.standard.set(isTitle, forKey: "isTitle")
     }
     
     func anyData(date: String) -> DataResults? {
@@ -66,8 +67,15 @@ class RealmResultViewModel {
         return UserDefaults.standard.string(forKey: "title3")
     }() ?? "Title3"
     
+    var isTitle: Bool = {
+        return UserDefaults.standard.bool(forKey: "isTitle")
+    }()
+    
     func contents(name: String, date: String, check: String, count: Int) -> DataResults {
         dataManager.contents(name: name, date: date, check: check, count: count)
     }
+}
+extension Notification.Name {
+    static let authStateTitle = NSNotification.Name("authStateTitle")
 }
 
