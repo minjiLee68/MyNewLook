@@ -28,7 +28,7 @@
 		0A1D06B027AC0DAF00F9CCC9 /* WAY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WAY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A1D06B327AC0DAF00F9CCC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = WAY/AppDelegate.swift; sourceTree = "<group>"; };
 		0A1D06B527AC0DAF00F9CCC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = WAY/SceneDelegate.swift; sourceTree = "<group>"; };
-		0A1D06BC27AC0DB000F9CCC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A1D06BC27AC0DB000F9CCC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		0A1D06BF27AC0DB000F9CCC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A1D06C127AC0DB000F9CCC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = WAY/Info.plist; sourceTree = "<group>"; };
 		0A3302BD27C54A8C00DA7288 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -386,7 +386,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4FEA612D8193C9B0F44FD99A /* Pods-WAY.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4JR7PKLFY2;
@@ -414,7 +416,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9744619FFA3D65F039B1A9C /* Pods-WAY.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4JR7PKLFY2;

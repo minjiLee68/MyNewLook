@@ -43,10 +43,6 @@ class ContentViewController: UIViewController {
     }
     
     func contentsText() {
-//        contents1.text = viewmodel.title1
-//        contents2.text = viewmodel.title2
-//        contents3.text = viewmodel.title3
-        
         let ud = UserDefaults.standard
         if let title1 = ud.string(forKey: "title1") {
             contents1.text = title1

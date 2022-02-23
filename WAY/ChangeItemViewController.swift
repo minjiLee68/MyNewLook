@@ -73,12 +73,12 @@ extension ChangeItemViewController {
 
 extension ChangeItemViewController {
     @IBAction func enter(_ sender: UIButton) {
-//        viewmodel.titleDB(own: contents1.text ?? "-" , two: contents2.text ?? "-", three: contents3.text ?? "-", isTitle: true)
         let ud = UserDefaults.standard
         
         ud.set(self.contents1.text, forKey: "title1")
         ud.set(self.contents2.text, forKey: "title2")
         ud.set(self.contents3.text, forKey: "title3")
+        ud.set(true, forKey: "isTitle")
         
         guard let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "DateViewController") as? DataPickerViewController else { return }
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainVC, animated: true)

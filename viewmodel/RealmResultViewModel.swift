@@ -27,7 +27,6 @@ class RealmResultViewModel {
         data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@ AND date = %@", title1, date)).first
         data2 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@ AND date = %@", title2, date)).first
         data3 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@ AND date = %@", title3, date)).first
-        print("\(data1?.check ?? "nil")")
     }
     
     func fileterObject(what date: String) -> DataResults? {
@@ -44,12 +43,13 @@ class RealmResultViewModel {
         return countDB?.count
     }
     
-    func titleDB(own title: String, two title2: String, three title3: String, isTitle: Bool) {
-        UserDefaults.standard.set(title, forKey: "title1")
-        UserDefaults.standard.set(title2, forKey: "title2")
-        UserDefaults.standard.set(title3, forKey: "title3")
-        UserDefaults.standard.set(isTitle, forKey: "isTitle")
-    }
+//    func titleDB(own title: String, two title2: String, three title3: String, isTitle: Bool) {
+//        let ud = UserDefaults.standard
+//        ud.set(title, forKey: "title1")
+//        ud.set(title2, forKey: "title2")
+//        ud.set(title3, forKey: "title3")
+//        ud.set(isTitle, forKey: "isTitle")
+//    }
     
     func anyData(date: String) -> DataResults? {
         let anyDay = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date))
@@ -62,7 +62,7 @@ class RealmResultViewModel {
     var title2: String = {
         return UserDefaults.standard.string(forKey: "title2")
     }() ?? "Title2"
-    
+
     var title3: String = {
         return UserDefaults.standard.string(forKey: "title3")
     }() ?? "Title3"
