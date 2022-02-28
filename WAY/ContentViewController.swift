@@ -61,10 +61,10 @@ class ContentViewController: UIViewController {
         if sender.isSelected == true {
             check = "true"
             checkCount += 1
-            viewmodel.realmAdd(name: contents1.text!, check: check, date: picDay, count: checkCount)
+            viewmodel.realmData(check: check, name: contents1.text!, date: picDay, count: checkCount)
         } else if sender.isSelected == false {
             check = "false"
-            viewmodel.realmUpdate(check: check, name: contents1.text!, date: picDay)
+            viewmodel.realmData(check: check, name: contents1.text!, date: picDay, count: checkCount)
         }
     }
     
@@ -74,10 +74,10 @@ class ContentViewController: UIViewController {
         if sender.isSelected == true {
             check = "true"
             checkCount += 1
-            viewmodel.realmAdd(name: contents2.text!, check: check, date: picDay, count: checkCount)
+            viewmodel.realmData(check: check, name: contents2.text!, date: picDay, count: checkCount)
         } else if sender.isSelected == false {
             check = "false"
-            viewmodel.realmUpdate(check: check, name: contents2.text!, date: picDay)
+            viewmodel.realmData(check: check, name: contents2.text!, date: picDay, count: checkCount)
         }
     }
     
@@ -87,10 +87,10 @@ class ContentViewController: UIViewController {
         if sender.isSelected == true {
             check = "true"
             checkCount += 1
-            viewmodel.realmAdd(name: contents3.text!, check: check, date: picDay, count: checkCount)
+            viewmodel.realmData(check: check, name: contents3.text!, date: picDay, count: checkCount)
         } else if sender.isSelected == false {
             check = "false"
-            viewmodel.realmUpdate(check: check, name: contents3.text!, date: picDay)
+            viewmodel.realmData(check: check, name: contents3.text!, date: picDay, count: checkCount)
         }
     }
 }

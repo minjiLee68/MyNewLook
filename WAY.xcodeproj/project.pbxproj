@@ -16,10 +16,43 @@
 		0A3302BE27C54A8C00DA7288 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A3302BD27C54A8C00DA7288 /* Main.storyboard */; };
 		0A7A2FD627C61A1D00E268C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A1D06BC27AC0DB000F9CCC9 /* Assets.xcassets */; };
 		0A959DB027AD134A005A58F4 /* DataPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */; };
+		0A9F623727C921EA001205A7 /* RealmResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A780B27B6AC190071F67E /* RealmResultViewModel.swift */; };
+		0A9F623827C921ED001205A7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD102FB27BCDE2D00637A2F /* DataManager.swift */; };
+		0AC100F627C7D23D0076360B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC1007427C7C3AC0076360B /* WidgetKit.framework */; };
+		0AC100F727C7D23D0076360B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC1007627C7C3AC0076360B /* SwiftUI.framework */; };
+		0AC100FA27C7D23D0076360B /* MyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC100F927C7D23D0076360B /* MyWidget.swift */; };
+		0AC100FC27C7D23E0076360B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC100FB27C7D23E0076360B /* Assets.xcassets */; };
+		0AC1010027C7D23E0076360B /* MyWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0AC100F527C7D23D0076360B /* MyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0AC1013027C80D530076360B /* DataResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A780F27B6BE430071F67E /* DataResults.swift */; };
 		0AD102FC27BCDE2D00637A2F /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD102FB27BCDE2D00637A2F /* DataManager.swift */; };
 		0AFFF3B427B15A9D00F57939 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFFF3B327B15A9D00F57939 /* ContentViewController.swift */; };
-		E82230A9463716BE6556BBE5 /* Pods_WAY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9241979A3FE4D30E3D83B89E /* Pods_WAY.framework */; };
+		7C3E232701A2FF3170C6AC81 /* Pods_WAY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65A1F81899E80B06668E2F5 /* Pods_WAY.framework */; };
+		D93594DCD44A7B13ECD66404 /* Pods_MyWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B4582E653DF603895EEEEF3 /* Pods_MyWidgetExtension.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0AC100FE27C7D23E0076360B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A1D06A827AC0DAF00F9CCC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AC100F427C7D23D0076360B;
+			remoteInfo = MyWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0AC1008427C7C3AC0076360B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0AC1010027C7D23E0076360B /* MyWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A02399427B55E6E00C36E69 /* ChangeItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChangeItemViewController.swift; path = WAY/ChangeItemViewController.swift; sourceTree = "<group>"; };
@@ -33,13 +66,21 @@
 		0A1D06C127AC0DB000F9CCC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = WAY/Info.plist; sourceTree = "<group>"; };
 		0A3302BD27C54A8C00DA7288 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		0A959DAF27AD134A005A58F4 /* DataPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataPickerViewController.swift; path = WAY/DataPickerViewController.swift; sourceTree = "<group>"; };
+		0AC1007427C7C3AC0076360B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		0AC1007627C7C3AC0076360B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		0AC100F527C7D23D0076360B /* MyWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AC100F927C7D23D0076360B /* MyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWidget.swift; sourceTree = "<group>"; };
+		0AC100FB27C7D23E0076360B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0AC100FD27C7D23E0076360B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AC1010427C7D4910076360B /* MyWidgetExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyWidgetExtensionRelease.entitlements; sourceTree = "<group>"; };
 		0AD102FB27BCDE2D00637A2F /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0AFFF3B327B15A9D00F57939 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewController.swift; path = WAY/ContentViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
-		4FEA612D8193C9B0F44FD99A /* Pods-WAY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WAY.debug.xcconfig"; path = "Target Support Files/Pods-WAY/Pods-WAY.debug.xcconfig"; sourceTree = "<group>"; };
-		9241979A3FE4D30E3D83B89E /* Pods_WAY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WAY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7198B993A0580E158F0891B /* Pods-MyNewLook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNewLook.debug.xcconfig"; path = "Target Support Files/Pods-MyNewLook/Pods-MyNewLook.debug.xcconfig"; sourceTree = "<group>"; };
-		BB79AC2B6D19381D76E1FD38 /* Pods-MyNewLook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNewLook.release.xcconfig"; path = "Target Support Files/Pods-MyNewLook/Pods-MyNewLook.release.xcconfig"; sourceTree = "<group>"; };
-		C9744619FFA3D65F039B1A9C /* Pods-WAY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WAY.release.xcconfig"; path = "Target Support Files/Pods-WAY/Pods-WAY.release.xcconfig"; sourceTree = "<group>"; };
+		15B5746BCB3E61842BBB7FF5 /* Pods-MyWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-MyWidgetExtension/Pods-MyWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		3B4582E653DF603895EEEEF3 /* Pods_MyWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9539951B67410F2C0EED033C /* Pods-WAY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WAY.debug.xcconfig"; path = "Target Support Files/Pods-WAY/Pods-WAY.debug.xcconfig"; sourceTree = "<group>"; };
+		A5A49144F6013600E68B345B /* Pods-MyWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-MyWidgetExtension/Pods-MyWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		E65A1F81899E80B06668E2F5 /* Pods_WAY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WAY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD66BD6FBB2723489503C4B6 /* Pods-WAY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WAY.release.xcconfig"; path = "Target Support Files/Pods-WAY/Pods-WAY.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +88,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E82230A9463716BE6556BBE5 /* Pods_WAY.framework in Frameworks */,
+				7C3E232701A2FF3170C6AC81 /* Pods_WAY.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AC100F227C7D23D0076360B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AC100F727C7D23D0076360B /* SwiftUI.framework in Frameworks */,
+				0AC100F627C7D23D0076360B /* WidgetKit.framework in Frameworks */,
+				D93594DCD44A7B13ECD66404 /* Pods_MyWidgetExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +124,7 @@
 		0A1D06A727AC0DAF00F9CCC9 = {
 			isa = PBXGroup;
 			children = (
+				0AC1010427C7D4910076360B /* MyWidgetExtensionRelease.entitlements */,
 				0A5C627327BC0B8200CB2AAA /* viewmodel */,
 				0A0A780627B667CA0071F67E /* storyboard */,
 				0A0A780527B667BB0071F67E /* model */,
@@ -84,16 +136,19 @@
 				0A1D06BC27AC0DB000F9CCC9 /* Assets.xcassets */,
 				0A1D06BE27AC0DB000F9CCC9 /* LaunchScreen.storyboard */,
 				0A1D06C127AC0DB000F9CCC9 /* Info.plist */,
+				0AC100F827C7D23D0076360B /* MyWidget */,
 				0A1D06B127AC0DAF00F9CCC9 /* Products */,
 				99F4345F1F669D24682F7A3B /* Pods */,
 				AF92C262A7D16F5C9BF7FB39 /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		0A1D06B127AC0DAF00F9CCC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				0A1D06B027AC0DAF00F9CCC9 /* WAY.app */,
+				0AC100F527C7D23D0076360B /* MyWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,13 +162,23 @@
 			path = viewmodel;
 			sourceTree = "<group>";
 		};
+		0AC100F827C7D23D0076360B /* MyWidget */ = {
+			isa = PBXGroup;
+			children = (
+				0AC100F927C7D23D0076360B /* MyWidget.swift */,
+				0AC100FB27C7D23E0076360B /* Assets.xcassets */,
+				0AC100FD27C7D23E0076360B /* Info.plist */,
+			);
+			path = MyWidget;
+			sourceTree = "<group>";
+		};
 		99F4345F1F669D24682F7A3B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A7198B993A0580E158F0891B /* Pods-MyNewLook.debug.xcconfig */,
-				BB79AC2B6D19381D76E1FD38 /* Pods-MyNewLook.release.xcconfig */,
-				4FEA612D8193C9B0F44FD99A /* Pods-WAY.debug.xcconfig */,
-				C9744619FFA3D65F039B1A9C /* Pods-WAY.release.xcconfig */,
+				A5A49144F6013600E68B345B /* Pods-MyWidgetExtension.debug.xcconfig */,
+				15B5746BCB3E61842BBB7FF5 /* Pods-MyWidgetExtension.release.xcconfig */,
+				9539951B67410F2C0EED033C /* Pods-WAY.debug.xcconfig */,
+				FD66BD6FBB2723489503C4B6 /* Pods-WAY.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -121,7 +186,10 @@
 		AF92C262A7D16F5C9BF7FB39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9241979A3FE4D30E3D83B89E /* Pods_WAY.framework */,
+				0AC1007427C7C3AC0076360B /* WidgetKit.framework */,
+				0AC1007627C7C3AC0076360B /* SwiftUI.framework */,
+				3B4582E653DF603895EEEEF3 /* Pods_MyWidgetExtension.framework */,
+				E65A1F81899E80B06668E2F5 /* Pods_WAY.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -133,20 +201,40 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A1D06C427AC0DB000F9CCC9 /* Build configuration list for PBXNativeTarget "WAY" */;
 			buildPhases = (
-				B1DCF15C7CC565DF98E981B6 /* [CP] Check Pods Manifest.lock */,
+				AEEC694758F940C1D8FF0F15 /* [CP] Check Pods Manifest.lock */,
 				0A1D06AC27AC0DAF00F9CCC9 /* Sources */,
 				0A1D06AD27AC0DAF00F9CCC9 /* Frameworks */,
 				0A1D06AE27AC0DAF00F9CCC9 /* Resources */,
-				A963B8CF08795FF799D8946A /* [CP] Embed Pods Frameworks */,
+				0AC1008427C7C3AC0076360B /* Embed App Extensions */,
+				D2913FDBB140BFB8B2B83C20 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0AC100FF27C7D23E0076360B /* PBXTargetDependency */,
 			);
 			name = WAY;
 			productName = MyNewLook;
 			productReference = 0A1D06B027AC0DAF00F9CCC9 /* WAY.app */;
 			productType = "com.apple.product-type.application";
+		};
+		0AC100F427C7D23D0076360B /* MyWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AC1010127C7D23E0076360B /* Build configuration list for PBXNativeTarget "MyWidgetExtension" */;
+			buildPhases = (
+				38904B3A45FC55152B56BEDF /* [CP] Check Pods Manifest.lock */,
+				0AC100F127C7D23D0076360B /* Sources */,
+				0AC100F227C7D23D0076360B /* Frameworks */,
+				0AC100F327C7D23D0076360B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyWidgetExtension;
+			productName = MyWidgetExtension;
+			productReference = 0AC100F527C7D23D0076360B /* MyWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -159,6 +247,9 @@
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					0A1D06AF27AC0DAF00F9CCC9 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					0AC100F427C7D23D0076360B = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
@@ -177,6 +268,7 @@
 			projectRoot = "";
 			targets = (
 				0A1D06AF27AC0DAF00F9CCC9 /* WAY */,
+				0AC100F427C7D23D0076360B /* MyWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -192,29 +284,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0AC100F327C7D23D0076360B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AC100FC27C7D23E0076360B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A963B8CF08795FF799D8946A /* [CP] Embed Pods Frameworks */ = {
+		38904B3A45FC55152B56BEDF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WAY/Pods-WAY-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WAY/Pods-WAY-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyWidgetExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WAY/Pods-WAY-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B1DCF15C7CC565DF98E981B6 /* [CP] Check Pods Manifest.lock */ = {
+		AEEC694758F940C1D8FF0F15 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -229,9 +334,26 @@
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-WAY-checkManifestLockResult.txt",
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2913FDBB140BFB8B2B83C20 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WAY/Pods-WAY-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WAY/Pods-WAY-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WAY/Pods-WAY-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -252,7 +374,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0AC100F127C7D23D0076360B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AC1013027C80D530076360B /* DataResults.swift in Sources */,
+				0A9F623827C921ED001205A7 /* DataManager.swift in Sources */,
+				0A9F623727C921EA001205A7 /* RealmResultViewModel.swift in Sources */,
+				0AC100FA27C7D23D0076360B /* MyWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0AC100FF27C7D23E0076360B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AC100F427C7D23D0076360B /* MyWidgetExtension */;
+			targetProxy = 0AC100FE27C7D23E0076360B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0A1D06BE27AC0DB000F9CCC9 /* LaunchScreen.storyboard */ = {
@@ -375,6 +516,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -384,8 +526,9 @@
 		};
 		0A1D06C527AC0DB000F9CCC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FEA612D8193C9B0F44FD99A /* Pods-WAY.debug.xcconfig */;
+			baseConfigurationReference = 9539951B67410F2C0EED033C /* Pods-WAY.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
@@ -414,11 +557,13 @@
 		};
 		0A1D06C627AC0DB000F9CCC9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9744619FFA3D65F039B1A9C /* Pods-WAY.release.xcconfig */;
+			baseConfigurationReference = FD66BD6FBB2723489503C4B6 /* Pods-WAY.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = WAY/WAYRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4JR7PKLFY2;
@@ -434,11 +579,68 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.minji.WAY;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minji.WAY.Project;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0AC1010227C7D23E0076360B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5A49144F6013600E68B345B /* Pods-MyWidgetExtension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4JR7PKLFY2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minji.WAY.MyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0AC1010327C7D23E0076360B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15B5746BCB3E61842BBB7FF5 /* Pods-MyWidgetExtension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MyWidgetExtensionRelease.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4JR7PKLFY2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.minji.WAY.MyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -459,6 +661,15 @@
 			buildConfigurations = (
 				0A1D06C527AC0DB000F9CCC9 /* Debug */,
 				0A1D06C627AC0DB000F9CCC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AC1010127C7D23E0076360B /* Build configuration list for PBXNativeTarget "MyWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AC1010227C7D23E0076360B /* Debug */,
+				0AC1010327C7D23E0076360B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

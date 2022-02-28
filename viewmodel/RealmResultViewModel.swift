@@ -19,8 +19,11 @@ class RealmResultViewModel {
     var realm = try! Realm()
     let dataManager = DataManager.shared
     
-    func realmAdd(name: String, check: String, date: String, count: Int) {
-        dataManager.realmAdd(name: name, check: check, date: date, count: count)
+    private init() {
+//        let path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Way.Project")?.appendingPathComponent(".realm")
+//        let config = Realm.Configuration(fileURL: path)
+//        realm = try! Realm(configuration: config)
+//        print("\(realm.configuration.fileURL)")
     }
     
     func fetchObject(date: String, title1: String, title2: String, title3: String) {
@@ -34,8 +37,8 @@ class RealmResultViewModel {
         return data
     }
     
-    func realmUpdate(check: String, name: String, date: String) {
-        dataManager.realmUpdate(check: check, name: name, date: date)
+    func realmData(check: String, name: String, date: String, count: Int) {
+        dataManager.realmData(check: check, name: name, date: date, count: count)
     }
     
     func countDBSet(key date: String) -> Int? {
@@ -50,11 +53,6 @@ class RealmResultViewModel {
 //        ud.set(title3, forKey: "title3")
 //        ud.set(isTitle, forKey: "isTitle")
 //    }
-    
-    func anyData(date: String) -> DataResults? {
-        let anyDay = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date))
-        return anyDay.first
-    }
     
     var title1: String = {
         return UserDefaults.standard.string(forKey: "title1")
@@ -75,7 +73,3 @@ class RealmResultViewModel {
         dataManager.contents(name: name, date: date, check: check, count: count)
     }
 }
-extension Notification.Name {
-    static let authStateTitle = NSNotification.Name("authStateTitle")
-}
-

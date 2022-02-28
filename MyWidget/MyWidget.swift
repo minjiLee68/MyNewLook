@@ -23,6 +23,11 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
+//        let midnight = Calendar.current.startOfDay(for: Date())
+//        let nextMidnight = Calendar.current.date(byAdding: .day, value: 1, to: midnight)!
+//        let entries = [SimpleEntry(date: midnight)]
+//        let timeline = Timeline(entries: entries, policy: .after(nextMidnight))
+//        completion(timeline)
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
@@ -54,8 +59,6 @@ struct MyWidgetEntryView : View {
                 VStack(alignment: .leading) {
                     header
                     Spacer()
-                    pricting
-                    Spacer()
                 }.padding(20)
                 
                 Spacer()
@@ -65,7 +68,7 @@ struct MyWidgetEntryView : View {
     
     var header: some View {
         Group {
-            Text("WAY APP")
+            Text(entry.date, style: .time)zcb
                 .bold()
                 .font(family == .systemLarge ? .system(size: 40) : .title)
                 .minimumScaleFactor(0.5)
@@ -74,16 +77,6 @@ struct MyWidgetEntryView : View {
         }
         .foregroundColor(Color("titleColor"))
     }
-    
-    var pricting: some View {
-        Group {
-            
-        }
-    }
-    
-//    var price: some View {
-//        Text (entry.error ? "+ ----" : "\(entry.date.diffMode == .up ? "+" : "")")
-//    }
 }
 
 @main

@@ -17,27 +17,32 @@ class DataManager {
     var data1: DataResults?
     var data2: DataResults?
     var data3: DataResults?
-    var notificationToken: NotificationToken?
     
     private init() {
+//        let path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Way.Project")?.appendingPathComponent("db.realm")
+//        let config = Realm.Configuration(fileURL: path)
+//        realm = try! Realm(configuration: config)
+        print("\(Realm.Configuration.defaultConfiguration.fileURL!)")
+
         realm = try! Realm()
         result = realm.objects(DataResults.self)
     }
-    
-    func realmAdd(name: String, check: String, date: String, count: Int) {
-        let mainData = self.contents(name: name, date: date, check: check, count: count)
-        
-        try! self.realm.write {
-            self.realm.add(mainData)
-            print("\(Realm.Configuration.defaultConfiguration.fileURL!)")
-        }
-    }
-
-    func realmUpdate(check: String, name: String, date: String) {
+ 
+    func realmData(check: String, name: String, date: String, count: Int) {
         if let data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@ AND date = %@", name, date)).first {
             try! realm.write {
                 data1.check = check
-                data1.count -= 1
+                if check == "false" {
+                    data1.count -= 1
+                } else {
+                    data1.count += 1
+                }
+            }
+        } else {
+            try! self.realm.write {
+                let mainData = self.contents(name: name, date: date, check: check, count: count)
+                self.realm.add(mainData)
+                print("\(Realm.Configuration.defaultConfiguration.fileURL!)")
             }
         }
     }
@@ -59,8 +64,4 @@ class DataManager {
         content.count = count
         return content
     }
-}
-
-extension Notification.Name {
-    static let observer = Notification.Name("observer")
 }
