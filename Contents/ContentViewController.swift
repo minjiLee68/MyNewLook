@@ -34,11 +34,15 @@ class ContentViewController: UIViewController {
         super.viewWillAppear(animated)
         
         contentsText()
+        datePickerCount()
+        
+        if picDay == "" {
+            picDay = date
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         dateInit()
     }
     
@@ -93,30 +97,36 @@ class ContentViewController: UIViewController {
             viewmodel.realmData(check: check, name: contents3.text!, date: picDay, count: checkCount)
         }
     }
+    
+    func datePickerCount() {
+        viewmodel.fetchObject(date: date, title1: contents1.text!, title2: contents2.text!, title3: contents3.text!)
+    
+        if viewmodel.data1?.date == date {
+            let check1 = viewmodel.data1?.check ?? "false"
+            self.check1.isSelected = Bool(check1)!
+        } else {
+            self.check1.isSelected = false
+        }
+        
+        if viewmodel.data2?.date == date {
+            let check2 = viewmodel.data2?.check ?? "false"
+            self.check2.isSelected = Bool(check2)!
+        } else {
+            self.check2.isSelected = false
+        }
+        
+        if viewmodel.data3?.date == date {
+            let check3 = viewmodel.data3?.check ?? "false"
+            self.check3.isSelected = Bool(check3)!
+        } else {
+            self.check3.isSelected = false
+        }
+    }
 }
 
 extension ContentViewController {
     func countData() {
         checkCount = viewmodel.countDBSet(key: picDay) ?? 0
-    }
-}
-
-extension ContentViewController {
-    func picDaySelected() {
-        if picDay != "" {
-            notPicDay.isHidden = true
-            contents1.isHidden = false
-            contents2.isHidden = false
-            contents3.isHidden = false
-            
-            check1.isHidden = false
-            check2.isHidden = false
-            check3.isHidden = false
-            
-            v1.isHidden = false
-            v2.isHidden = false
-            v3.isHidden = false
-        }
     }
 }
 

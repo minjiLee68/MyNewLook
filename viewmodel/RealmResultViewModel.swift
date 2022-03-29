@@ -18,23 +18,22 @@ class RealmResultViewModel {
     
     var realm = try! Realm()
     let dataManager = DataManager.shared
-    
-    private init() {
-//        let path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Way.Project")?.appendingPathComponent(".realm")
-//        let config = Realm.Configuration(fileURL: path)
-//        realm = try! Realm(configuration: config)
-//        print("\(realm.configuration.fileURL)")
-    }
+
     
     func fetchObject(date: String, title1: String, title2: String, title3: String) {
-        data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@ AND date = %@", title1, date)).first
-        data2 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@ AND date = %@", title2, date)).first
-        data3 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@ AND date = %@", title3, date)).first
+        data1 = realm.objects(DataResults.self)
+            .filter(NSPredicate(format: "name = %@ AND date = %@", title1, date))
+            .first
+        data2 = realm.objects(DataResults.self)
+            .filter(NSPredicate(format: "name = %@ AND date = %@", title2, date))
+            .first
+        data3 = realm.objects(DataResults.self)
+            .filter(NSPredicate(format: "name = %@ AND date = %@", title3, date))
+            .first
     }
     
     func fileterObject(what date: String) -> DataResults? {
-        let data = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).last
-        return data
+        return realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).last
     }
     
     func realmData(check: String, name: String, date: String, count: Int) {
@@ -45,14 +44,6 @@ class RealmResultViewModel {
         let countDB = realm.objects(DataResults.self).filter(NSPredicate(format: "date = %@", date)).last
         return countDB?.count
     }
-    
-//    func titleDB(own title: String, two title2: String, three title3: String, isTitle: Bool) {
-//        let ud = UserDefaults.standard
-//        ud.set(title, forKey: "title1")
-//        ud.set(title2, forKey: "title2")
-//        ud.set(title3, forKey: "title3")
-//        ud.set(isTitle, forKey: "isTitle")
-//    }
     
     var title1: String = {
         return UserDefaults.standard.string(forKey: "title1")

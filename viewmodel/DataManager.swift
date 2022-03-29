@@ -19,25 +19,15 @@ class DataManager {
     var data3: DataResults?
     
     private init() {
-//        let path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Way.Project")?.appendingPathComponent("db.realm")
-//        let config = Realm.Configuration(fileURL: path)
-//        realm = try! Realm(configuration: config)
-        print("\(Realm.Configuration.defaultConfiguration.fileURL!)")
-
         realm = try! Realm()
         result = realm.objects(DataResults.self)
     }
  
     func realmData(check: String, name: String, date: String, count: Int) {
-        if let data1 = realm.objects(DataResults.self).filter(NSPredicate(format: "name = %@ AND date = %@", name, date)).first {
-            try! realm.write {
-                data1.check = check
-                if check == "false" {
-                    data1.count -= 1
-                } else {
-                    data1.count += 1
-                }
-            }
+        if let data1 = realm.objects(DataResults.self)
+            .filter(NSPredicate(format: "name = %@ AND date = %@", name, date))
+            .first {
+            testCode(data1, check, count)
         } else {
             try! self.realm.write {
                 let mainData = self.contents(name: name, date: date, check: check, count: count)
@@ -46,6 +36,19 @@ class DataManager {
             }
         }
     }
+    
+    func testCode(_ data1 : DataResults, _ check : String, _ count: Int){
+        try! realm.write {
+            data1.check = check
+            if check == "false" {
+                data1.count -= 1
+            } else {
+                data1.count += 1
+            }
+        }
+    }
+    
+    
     
     func countDB(count: Int) {
         UserDefaults.standard.set(count, forKey: "count")

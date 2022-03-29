@@ -15,9 +15,4 @@ target 'WAY' do
 
 end
 
-target 'MyWidgetExtension' do
-  use_frameworks!
-	share_pods
-end
-
 

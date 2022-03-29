@@ -28,8 +28,7 @@ class ChangeItemViewController: UIViewController, UITextFieldDelegate {
         //키보드 디랙션
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-//        swipeRecognizer()
+
     }
     
     override func viewDidLayoutSubviews() {
