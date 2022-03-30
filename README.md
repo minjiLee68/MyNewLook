@@ -8,7 +8,7 @@
 ----------------------
 
 ## - App 로고
-![Free_Sample_By_Wix (5)](https://user-images.githubusercontent.com/88191880/146406377-970bd7ae-af6f-440e-9d93-5d33aac677c6.jpg)
+![app cion](https://user-images.githubusercontent.com/88191880/160759764-dcb33ab8-1947-4e35-9661-ab566530b9ef.png)
 
 ## - App 이름
     WAY / 웨이
