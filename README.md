@@ -60,7 +60,7 @@
  <img src="https://user-images.githubusercontent.com/88191880/160761564-b4a15636-33d3-467e-bd74-c3fab4fc5fee.png" width="80" height="80"/>
  
     - 3개중 2개 체크
- <img src="https://user-images.githubusercontent.com/88191880/160761564-b4a15636-33d3-467e-bd74-c3fab4fc5fee.png" width="80" height="80"/>
+ <img src="https://user-images.githubusercontent.com/88191880/160761568-726ef1f8-7ecb-4fed-ab08-32e06c834f73.png" width="80" height="80"/>
  
     - 3개중 3개 체크
  <img src="https://user-images.githubusercontent.com/88191880/160761564-b4a15636-33d3-467e-bd74-c3fab4fc5fee.png" width="80" height="80"/>
