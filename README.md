@@ -44,7 +44,7 @@
 
 ## - 오늘 완료한 콘텐츠 체크
     콘텐츠를 완료하면 해당 체크박스를 눌러줍니다.
-<img src="https://user-images.githubusercontent.com/88191880/146410131-94ad2b41-af92-492b-914a-c9bc0aea9761.png" width="280" height="600"/>
+<img src="https://user-images.githubusercontent.com/88191880/160760383-0c0ba80c-688a-493e-861a-10c1f3441ddb.png" width="280" height="600"/>
 
 -------------------------------
 
