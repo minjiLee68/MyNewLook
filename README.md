@@ -38,7 +38,7 @@
 ## 2. 앱 주요 기능 및 스크린 샷
 ## - 콘텐츠 정하기 
     매일 해야 하는 습관 3가지를 정합니다.
-<img src="https://user-images.githubusercontent.com/88191880/146409532-db59219c-d396-49f5-9177-49ebb5908afb.png" width="280" height="600"/> <img src="https://user-images.githubusercontent.com/88191880/146409618-7c46866b-fbad-40d2-aad8-266854b6870c.png" width="280" height="600"/>
+<img src="https://user-images.githubusercontent.com/88191880/160760219-b0297c5f-b6cd-4291-8783-16ab7a07f113.png" width="280" height="600"/>
 
 --------------------------------
 
