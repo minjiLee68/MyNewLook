@@ -52,7 +52,7 @@
     1. 콘텐츠 체크 개수에 따라 캘린더 날짜 박스에 색깔이 달라집니다.
     2. 캘린더를 통해 나의 한달 활동을 한눈에 볼 수 있습니다.
     3. 다음날 날짜는 미리 체크할 수 없습니다.
-<img src="https://user-images.githubusercontent.com/88191880/146411410-4bf2ae70-0bbe-4c23-a26f-2a71224bf855.png" width="280" height="600"/> <img src="https://user-images.githubusercontent.com/88191880/146411430-0917a48b-2451-4f53-9f3c-b35f9e26e089.png" width="280" height="600"/>
+<img src="https://user-images.githubusercontent.com/88191880/160760452-2e41eb8a-ed0d-4bb8-8739-e1ddff703d05.png" width="280" height="600"/>
 
 
 ## - 체크개수에 따른 색상
